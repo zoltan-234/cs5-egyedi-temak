@@ -1,0 +1,42 @@
+/* Sakura (virág) – generálva: tools/build-themes.py */
+html[data-unics-theme="sakura-virag"] {
+  color-scheme: light;
+  --ut-bg: #fff4f7;
+  --ut-sidebar: #ffe3ec;
+  --ut-sidebar-fg: #5a1f36;
+  --ut-sidebar-muted: #844460;
+  --ut-surface: #ffffff;
+  --ut-surface-2: #ffe9f0;
+  --ut-row-alt: #fff8fa;
+  --ut-input-bg: #ffffff;
+  --ut-border: #f6d3df;
+  --ut-fg: #4a2233;
+  --ut-muted: #7f4a63;
+  --ut-heading: #3a1426;
+  --ut-accent: #c2255c;
+  --ut-accent-fg: #ffffff;
+  --ut-accent-2: #6741d9;
+  --ut-accent-2-fg: #ffffff;
+  --ut-star: #a86410;
+  --ut-success: #2b8a3e;
+  --ut-header-bg: #ffe3ec;
+  --ut-header-fg: #3a1426;
+  --ut-header-grad: linear-gradient(rgba(255, 244, 247, 0.58), rgba(255, 244, 247, 0.58));
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(rgba(255, 244, 247, 0.58), rgba(255, 244, 247, 0.58));
+  --ut-banner-fg: #3a1426;
+  --ut-c1: #c2255c;
+  --ut-c2: #7048e8;
+  --ut-c3: #e8590c;
+  --ut-c4: #0c8599;
+  --ut-c5: #d6336c;
+  --ut-icon-filter: none;
+  --ut-logo-filter: none;
+  --ut-shadow-k: 1;
+}
+html[data-unics-theme="sakura-virag"][data-unics-theme="sakura-virag"][data-unics-theme="sakura-virag"] #header {
+  background-image: linear-gradient(rgba(255, 244, 247, 0.58), rgba(255, 244, 247, 0.58)), url("sakura-virag.jpg") !important;
+  background-size: auto, 720px auto !important;
+  background-position: 0 0, center top !important;
+  background-repeat: no-repeat, repeat !important;
+}

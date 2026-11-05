@@ -1,0 +1,238 @@
+/* NEO-BRUTALISTA – vastag tintakeret, kemény (elmosatlan) eltolt árnyék,
+   éles sarkok, nagybetűs címek, "odanyomódó" kattintás. */
+
+html[data-unics-layout="brutal"] {
+  --b-ink: var(--m-heading);
+  --b-w: 2px;
+  --b-off: 5px;
+  --m-r-sm: 4px;
+  --m-r-md: 6px;
+  --m-r-lg: 8px;
+  --m-ease: cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  --m-fast: 110ms;
+  --m-med: 160ms;
+  --m-slow: 360ms;
+  --m-border: var(--b-ink);
+  --m-border-hi: var(--b-ink);
+  --m-shadow-1: var(--b-off) var(--b-off) 0 var(--b-ink);
+  --m-shadow-2: 7px 7px 0 var(--b-ink);
+  --m-shadow-3: 9px 9px 0 var(--m-accent);
+  --m-display: "UT Manrope", "UT Inter", system-ui, sans-serif;
+}
+
+html[data-unics-layout="brutal"] :is(h1, h2, h3, .MuiCardHeader-title, .MuiTypography-h5, .MuiTypography-h6) {
+  font-weight: 800 !important;
+  letter-spacing: -0.03em;
+}
+html[data-unics-layout="brutal"] [data-ut~="page-title"] {
+  text-transform: uppercase;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em;
+}
+
+/* Keretek és kemény árnyékok */
+html[data-unics-layout="brutal"] .MuiCard-root,
+html[data-unics-layout="brutal"] section:is(.FavScenes, .Messages, .ToDos, .PersonalStats),
+html[data-unics-layout="brutal"] [data-ut~="view-bar"],
+html[data-unics-layout="brutal"] h2.defaultBackgroundColor,
+html[data-unics-layout="brutal"] .MuiToggleButtonGroup-root,
+html[data-unics-layout="brutal"] [data-ut~="term-btn"],
+html[data-unics-layout="brutal"] .rbc-month-view {
+  border: var(--b-w) solid var(--b-ink) !important;
+  border-radius: var(--m-r-lg) !important;
+  box-shadow: var(--m-shadow-1) !important;
+}
+html[data-unics-layout="brutal"] #content .MuiCard-root:not(.ToolContainer):not(.profile .MuiCard-root):not(.leftpanel .MuiCard-root):hover,
+html[data-unics-layout="brutal"] section:is(.FavScenes, .Messages, .ToDos, .PersonalStats):hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--m-shadow-3) !important;
+  border-color: var(--b-ink) !important;
+}
+html[data-unics-layout="brutal"] #content .MuiCard-root:not(.ToolContainer):not(.profile .MuiCard-root):not(.leftpanel .MuiCard-root):active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--b-ink) !important;
+}
+html[data-unics-layout="brutal"] #content .MuiCard-root > [style*="background-image"] {
+  border-bottom: var(--b-w) solid var(--b-ink);
+}
+html[data-unics-layout="brutal"] #content .MuiCard-root:hover > [style*="background-image"],
+html[data-unics-layout="brutal"] #content .MuiCard-root:hover .MuiCardMedia-root {
+  transform: none;
+  filter: saturate(1.25) contrast(1.05);
+}
+
+/* Menü: éles, vonalas, aktív elem tömör kiemelőszínnel */
+html[data-unics-layout="brutal"] #leftmenu {
+  border-right: var(--b-w) solid var(--b-ink) !important;
+}
+html[data-unics-layout="brutal"] aside#left > ul > li {
+  margin: 4px 12px !important;
+  border: var(--b-w) solid transparent;
+  border-radius: var(--m-r-md) !important;
+  transition: transform var(--m-fast) var(--m-ease), box-shadow var(--m-fast) var(--m-ease), background-color var(--m-fast) linear;
+}
+html[data-unics-layout="brutal"] aside#left > ul > li > a {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 13px !important;
+}
+html[data-unics-layout="brutal"] aside#left > ul > li:hover {
+  border-color: var(--m-side-fg);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--m-side-fg);
+  background-color: transparent !important;
+}
+html[data-unics-layout="brutal"] aside#left > ul > li.current,
+html[data-unics-layout="brutal"] aside#left > ul > li.current:hover {
+  background-color: var(--m-accent) !important;
+  border-color: var(--m-side-fg);
+  box-shadow: 4px 4px 0 var(--m-side-fg);
+}
+html[data-unics-layout="brutal"] aside#left > ul > li.current > a,
+html[data-unics-layout="brutal"] aside#left > ul > li.current > a::before {
+  color: var(--m-accent-fg) !important;
+}
+html[data-unics-layout="brutal"] .LayoutUserMenu {
+  border-radius: var(--m-r-md);
+  box-shadow: none;
+  border: var(--b-w) solid var(--m-side-fg);
+}
+html[data-unics-layout="brutal"] .collapseMenuButton {
+  border: var(--b-w) solid var(--b-ink) !important;
+  border-radius: 0 var(--m-r-md) var(--m-r-md) 0 !important;
+  box-shadow: 3px 3px 0 var(--b-ink);
+}
+
+/* Fejléc: vastag alsó vonal */
+html[data-unics-layout="brutal"][data-unics-theme] #header {
+  border-bottom: 3px solid var(--b-ink);
+}
+
+/* Fülek: téglalap-gombok, aktív = tömör */
+html[data-unics-layout="brutal"] .MuiTabs-root {
+  border-bottom: var(--b-w) solid var(--b-ink);
+}
+html[data-unics-layout="brutal"] .MuiTab-root {
+  text-transform: uppercase !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.03em !important;
+  font-size: 13px !important;
+}
+html[data-unics-layout="brutal"] .MuiTab-root.Mui-selected {
+  color: var(--m-accent-ink) !important;
+}
+html[data-unics-layout="brutal"] .MuiTabs-indicator {
+  height: 5px !important;
+  border-radius: 0 !important;
+  background-color: var(--m-accent) !important;
+  background-image: none !important;
+}
+
+/* Gombok: lenyomódnak */
+html[data-unics-layout="brutal"] .MuiButton-root {
+  border: var(--b-w) solid var(--b-ink) !important;
+  border-radius: var(--m-r-md) !important;
+  box-shadow: 3px 3px 0 var(--b-ink) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+html[data-unics-layout="brutal"] .MuiButton-root:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 5px 5px 0 var(--b-ink) !important;
+  filter: none !important;
+}
+html[data-unics-layout="brutal"] .MuiButton-root:active {
+  transform: translate(3px, 3px) !important;
+  box-shadow: 0 0 0 var(--b-ink) !important;
+}
+html[data-unics-layout="brutal"] .MuiFab-root {
+  border: var(--b-w) solid var(--b-ink) !important;
+  box-shadow: 4px 4px 0 var(--b-ink) !important;
+  border-radius: var(--m-r-md) !important;
+}
+html[data-unics-layout="brutal"] .MuiFab-root:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--b-ink) !important;
+}
+html[data-unics-layout="brutal"] [data-ut~="term-btn"] {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 800;
+  box-shadow: 3px 3px 0 var(--b-ink) !important;
+}
+html[data-unics-layout="brutal"] [data-ut~="term-btn"]:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--b-ink) !important;
+  border-color: var(--b-ink);
+  background-color: var(--m-accent) !important;
+  color: var(--m-accent-fg) !important;
+}
+html[data-unics-layout="brutal"] .MuiToggleButtonGroup-root {
+  padding: 0;
+  gap: 0;
+  box-shadow: 3px 3px 0 var(--b-ink) !important;
+}
+html[data-unics-layout="brutal"] .MuiToggleButton-root {
+  border-radius: 0 !important;
+}
+html[data-unics-layout="brutal"] .MuiToggleButton-root.Mui-selected {
+  background-color: var(--m-accent) !important;
+  color: var(--m-accent-fg) !important;
+}
+
+/* Mezők */
+html[data-unics-layout="brutal"] .MuiInput-underline,
+html[data-unics-layout="brutal"] .MuiOutlinedInput-root {
+  border: var(--b-w) solid var(--b-ink) !important;
+  border-radius: var(--m-r-md) !important;
+  box-shadow: 3px 3px 0 var(--b-ink);
+}
+html[data-unics-layout="brutal"] .MuiOutlinedInput-notchedOutline {
+  border: 0 !important;
+}
+html[data-unics-layout="brutal"] .MuiInput-underline.Mui-focused,
+html[data-unics-layout="brutal"] .Mui-focused.MuiOutlinedInput-root {
+  box-shadow: 5px 5px 0 var(--m-accent);
+  transform: translate(-1px, -1px);
+}
+html[data-unics-layout="brutal"] .Mui-focused .MuiOutlinedInput-notchedOutline {
+  box-shadow: none;
+}
+
+/* Felugró ablakok */
+html[data-unics-layout="brutal"] :is(.MuiDialog-paper, .MuiPopover-paper, .MuiMenu-paper) {
+  border: 3px solid var(--b-ink) !important;
+  border-radius: var(--m-r-lg) !important;
+  box-shadow: 10px 10px 0 var(--b-ink) !important;
+}
+html[data-unics-layout="brutal"] .MuiBackdrop-root {
+  backdrop-filter: none;
+}
+html[data-unics-layout="brutal"] .MuiTooltip-tooltip {
+  border: var(--b-w) solid var(--b-ink);
+  box-shadow: 3px 3px 0 var(--b-ink);
+  font-weight: 700;
+}
+
+/* Listák: vastag elválasztó, hoverre kiemelő sáv */
+html[data-unics-layout="brutal"] .ToolContainer ul:not(.boxLayout) > li {
+  border-top: var(--b-w) solid var(--b-ink) !important;
+}
+html[data-unics-layout="brutal"] .ToolContainer ul:not(.boxLayout) > li:hover {
+  background-color: var(--m-accent-tint) !important;
+  box-shadow: inset 6px 0 0 var(--m-accent);
+}
+html[data-unics-layout="brutal"] .ToolContainer ul:not(.boxLayout) > li::after {
+  content: "→";
+  font-weight: 800;
+}
+html[data-unics-layout="brutal"] li[class*="boxbg-"],
+html[data-unics-layout="brutal"] :is(.forumItem, .DialogItem) {
+  border: var(--b-w) solid var(--b-ink);
+  border-radius: var(--m-r-lg) !important;
+}
+html[data-unics-layout="brutal"] .avatar {
+  border: var(--b-w) solid var(--b-ink);
+}

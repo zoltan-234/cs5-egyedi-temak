@@ -1,0 +1,36 @@
+/* Pasztell – generálva: tools/build-themes.py */
+html[data-unics-theme="pastel"] {
+  color-scheme: light;
+  --ut-bg: #f7f5ff;
+  --ut-sidebar: #2e2a5c;
+  --ut-sidebar-fg: #f1efff;
+  --ut-sidebar-muted: #c3bfeb;
+  --ut-surface: #ffffff;
+  --ut-surface-2: #efecff;
+  --ut-row-alt: #faf9ff;
+  --ut-input-bg: #ffffff;
+  --ut-border: #e0dcf5;
+  --ut-fg: #2b2850;
+  --ut-muted: #5f5a8a;
+  --ut-heading: #1c1940;
+  --ut-accent: #6d5bd0;
+  --ut-accent-fg: #ffffff;
+  --ut-accent-2: #c93a70;
+  --ut-accent-2-fg: #ffffff;
+  --ut-star: #a86410;
+  --ut-success: #2f855a;
+  --ut-header-bg: #c7d2fe;
+  --ut-header-fg: #1c1940;
+  --ut-header-grad: linear-gradient(110deg, #a5b4fc 0%, #f9a8d4 60%, #fde68a 100%);
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #a5b4fc 0%, #f9a8d4 60%, #fde68a 100%);
+  --ut-banner-fg: #1c1940;
+  --ut-c1: #6d5bd0;
+  --ut-c2: #d6457a;
+  --ut-c3: #0e9f8e;
+  --ut-c4: #d97706;
+  --ut-c5: #2563eb;
+  --ut-icon-filter: none;
+  --ut-logo-filter: none;
+  --ut-shadow-k: 1;
+}

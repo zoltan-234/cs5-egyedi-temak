@@ -1,0 +1,117 @@
+/*
+ * Belépő oldal (#loginbox) – minden témában és stílusban egységes.
+ *
+ * Miért külön fájl: a belépőn nincs menü, fejléc vagy lap, ezért a téma- és
+ * stílusszabályok (mezők, gombok, árnyékok, sötét felület-jelölés) csak
+ * véletlenszerűen érték el. Itt fix, jól olvasható kinézetet adunk neki;
+ * csak a gomb színe követi a témát (--ut-accent), ha van ilyen.
+ * Betöltődik minden témához és minden stílushoz (kivéve Eredeti/Klasszikus).
+ */
+
+html:is([data-unics-theme], [data-unics-layout]) #loginbox {
+  --lg-ink: #1b1f3a;
+  --lg-muted: #5b6478;
+  --lg-line: #c3cad8;
+  --lg-head: #14183a;
+  --lg-accent: var(--ut-accent, #0b84ae);
+  --lg-accent-fg: var(--ut-accent-fg, #ffffff);
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: var(--lg-ink) !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 18px 48px rgba(10, 14, 40, 0.35) !important;
+  backdrop-filter: none !important;
+  transform: none !important;
+}
+
+/* Fejléc: egyetem neve, mindig világos betű sötét sávon */
+html:is([data-unics-theme], [data-unics-layout]) #loginbox h1,
+html:is([data-unics-theme], [data-unics-layout]) #loginbox h1 * {
+  background-color: var(--lg-head) !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* A kártya belseje: mindig fehér, sötét szöveg (sötét témában sem sötétül) */
+html:is([data-unics-theme], [data-unics-layout]) #loginbox #app,
+html:is([data-unics-theme], [data-unics-layout]) #loginbox form,
+html:is([data-unics-theme], [data-unics-layout]) #loginbox form > div {
+  background-color: transparent !important;
+  color: var(--lg-ink) !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Mezők */
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiInputBase-root {
+  background-color: #f6f8fb !important;
+  color: var(--lg-ink) !important;
+  border: 1px solid var(--lg-line) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: border-color 0.15s, box-shadow 0.15s !important;
+}
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiInputBase-root.Mui-focused {
+  border-color: var(--lg-accent) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lg-accent) 28%, transparent) !important;
+}
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiInputBase-root::before,
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiInputBase-root::after {
+  display: none !important;
+}
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiInputBase-input {
+  color: var(--lg-ink) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  -webkit-text-fill-color: var(--lg-ink) !important;
+}
+/* A lebegő felirat (Felhasználónév / Jelszó) a mezőben ül: a mező háttere
+   nem takarhatja el, ezért a felirat a mező fölé kerül. */
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiFormLabel-root {
+  color: var(--lg-muted) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  text-shadow: none !important;
+  /* Üresen: a mező közepén (a mező 44 px magas, a felirat sávja fölötte 16 px) */
+  position: absolute !important;
+  left: 14px !important;
+  top: 30px !important;
+  transform: none !important;
+  font-size: 15px !important;
+  line-height: 16px !important;
+  transition: top 0.15s, left 0.15s, font-size 0.15s !important;
+}
+/* Fókuszban vagy kitöltve: a mező fölé kerül */
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiInputLabel-shrink,
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiFormLabel-root.Mui-focused {
+  top: 0 !important;
+  left: 2px !important;
+  font-size: 12px !important;
+}
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiFormLabel-root.Mui-focused {
+  color: var(--lg-accent) !important;
+}
+
+/* Gomb */
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiButton-root {
+  background-color: var(--lg-accent) !important;
+  color: var(--lg-accent-fg) !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  transform: none !important;
+  text-shadow: none !important;
+}
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiButton-root:hover {
+  filter: brightness(1.08);
+}
+html:is([data-unics-theme], [data-unics-layout]) #loginbox .MuiButton-root:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--lg-accent) 45%, transparent) !important;
+  outline-offset: 2px !important;
+}

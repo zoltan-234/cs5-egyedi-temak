@@ -1,0 +1,197 @@
+/* FELSŐ MENÜ – a bal oldalsáv vízszintes sávvá alakul az oldal tetején,
+   a profil jobbra kerül, a fülek (Aktuális, Jelentkezés…) pedig bal oldali
+   függőleges sávot kapnak. A tartalom teljes szélességű.
+   Minden hely-szabály !important, mert az Unics a méreteit jss osztályokkal és inline adja. */
+
+html[data-unics-layout="topnav"] { --tn-h: 56px; }
+
+/* Az oldal váza: nincs oldalsáv-oszlop, fent a menüsáv helye */
+html[data-unics-layout="topnav"] .DLCLayout {
+  display: block !important;
+  padding-top: var(--tn-h) !important;
+}
+html[data-unics-layout="topnav"] #header,
+html[data-unics-layout="topnav"] #content {
+  margin-left: 0 !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+html[data-unics-layout="topnav"] #header {
+  top: calc(var(--tn-h) - 60px) !important;   /* a felső sor kigörgethet, a cím a menüsáv alatt marad */
+}
+
+/* A menüsáv */
+html[data-unics-layout="topnav"] #leftmenu {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+  width: 100% !important;
+  height: var(--tn-h) !important;
+  z-index: 1200 !important;
+  display: block !important;
+  overflow: visible !important;
+  border-right: 0 !important;
+  border-bottom: 1px solid var(--m-border) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 6px 22px -14px rgb(0 0 0 / 0.35) !important;
+}
+html[data-unics-layout="topnav"] aside#left {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: var(--tn-h) !important;
+  padding: 0 16px 0 88px !important;
+  overflow: visible !important;
+}
+html[data-unics-layout="topnav"] aside#left > ul {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: auto !important;
+  height: var(--tn-h) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* A kilépés ikon a jobb szélre, a profil elé */
+html[data-unics-layout="topnav"] aside#left > ul ~ a ~ ul {
+  margin-left: auto !important;
+}
+
+html[data-unics-layout="topnav"] aside#left > ul > li {
+  width: auto !important;
+  height: 40px !important;
+  margin: 0 2px !important;
+  border-radius: var(--m-r-md) !important;
+}
+html[data-unics-layout="topnav"] aside#left > ul > li > a {
+  display: flex !important;
+  align-items: center !important;
+  width: auto !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  margin: 0 !important;
+  padding: 0 14px 0 8px !important;
+  font-size: 14px !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+html[data-unics-layout="topnav"] aside#left > ul > li > a::before {
+  margin: 0 8px 0 4px !important;
+  font-size: 22px !important;
+  transform: none !important;
+}
+html[data-unics-layout="topnav"] aside#left > ul > li:hover > a::before {
+  transform: none !important;
+}
+/* Aktív menüpont: kiemelt háttér, nem kötelező a felirat-szín */
+html[data-unics-layout="topnav"] aside#left > ul > li.current,
+html[data-unics-layout="topnav"] aside#left > ul > li.current:hover {
+  background-color: var(--m-accent) !important;
+}
+html[data-unics-layout="topnav"] aside#left > ul > li.current > a,
+html[data-unics-layout="topnav"] aside#left > ul > li.current > a::before {
+  color: var(--m-accent-fg) !important;
+}
+
+/* Logó: a sáv bal szélén */
+html[data-unics-layout="topnav"] .dlclogo {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 80px !important;
+  height: var(--tn-h) !important;
+  z-index: 1300 !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border: 0 !important;
+}
+
+/* Profil-kártya: jobbra a sávban */
+html[data-unics-layout="topnav"] .LayoutUserMenu {
+  position: absolute !important;
+  top: 8px !important;
+  right: 64px !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: auto !important;
+  height: 40px !important;
+  padding: 0 12px 0 6px !important;
+  border-radius: 999px !important;
+}
+html[data-unics-layout="topnav"] .LayoutUserMenu .avatarblock {
+  height: 40px !important;
+  width: auto !important;
+}
+
+/* A nyitó/záró gomb itt nem kell */
+html[data-unics-layout="topnav"] .collapseMenuButton {
+  display: none !important;
+}
+
+/* Fülek (Aktuális, Jelentkezés, Meghívások, Archív): bal oldali függőleges sáv.
+   Rácsot használunk (nem position: fixed), mert a tartalom animációja (transform)
+   a fixed elemek vonatkoztatási pontját elmozgatná. */
+html[data-unics-layout="topnav"] #content > div:has(> .MuiTabs-root) {
+  display: grid !important;
+  grid-template-columns: 176px minmax(0, 1fr) !important;
+  column-gap: 24px !important;
+  align-items: start !important;
+}
+html[data-unics-layout="topnav"] #content > div:has(> .MuiTabs-root) > :not(.MuiTabs-root) {
+  grid-column: 2 !important;
+  min-width: 0 !important;
+}
+html[data-unics-layout="topnav"] .MuiTabs-root {
+  grid-column: 1 !important;
+  grid-row: 1 / span 20 !important;
+  position: sticky !important;
+  top: calc(var(--tn-h) + 80px) !important;
+  width: 176px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: block !important;
+  margin: 20px 0 0 !important;
+  background: var(--m-surface) !important;
+  border: 1px solid var(--m-border) !important;
+  border-radius: var(--m-r-md) !important;
+  padding: 6px !important;
+  box-shadow: var(--m-shadow-1) !important;
+  z-index: 5 !important;
+}
+html[data-unics-layout="topnav"] .MuiTabs-scroller {
+  overflow: visible !important;
+  height: auto !important;
+}
+html[data-unics-layout="topnav"] .MuiTabs-flexContainer {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+html[data-unics-layout="topnav"] .MuiTabs-root > .MuiTabs-scrollable:not(.MuiTabs-scroller),
+html[data-unics-layout="topnav"] .MuiTabs-indicator {
+  display: none !important;
+}
+html[data-unics-layout="topnav"] .MuiTab-root {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  min-height: 40px !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  border-radius: var(--m-r-sm) !important;
+}
+html[data-unics-layout="topnav"] .MuiTab-wrapper {
+  align-items: flex-start !important;
+}
+html[data-unics-layout="topnav"] .MuiTab-root.Mui-selected {
+  background-color: var(--m-accent) !important;
+  color: var(--m-accent-fg) !important;
+}
+html[data-unics-layout="topnav"] .MuiTab-root.Mui-selected * {
+  color: var(--m-accent-fg) !important;
+}

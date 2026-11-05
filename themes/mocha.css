@@ -1,0 +1,36 @@
+/* Catppuccin Mocha – generálva: tools/build-themes.py */
+html[data-unics-theme="mocha"] {
+  color-scheme: dark;
+  --ut-bg: #1e1e2e;
+  --ut-sidebar: #181825;
+  --ut-sidebar-fg: #cdd6f4;
+  --ut-sidebar-muted: #a6adc8;
+  --ut-surface: #262637;
+  --ut-surface-2: #313244;
+  --ut-row-alt: #222232;
+  --ut-input-bg: #181825;
+  --ut-border: #45475a;
+  --ut-fg: #cdd6f4;
+  --ut-muted: #a6adc8;
+  --ut-heading: #e6ebff;
+  --ut-accent: #cba6f7;
+  --ut-accent-fg: #1e1e2e;
+  --ut-accent-2: #fab387;
+  --ut-accent-2-fg: #1e1e2e;
+  --ut-star: #f9e2af;
+  --ut-success: #a6e3a1;
+  --ut-header-bg: #181825;
+  --ut-header-fg: #e6ebff;
+  --ut-header-grad: none;
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #181825 0%, #4e4364 100%);
+  --ut-banner-fg: #e6ebff;
+  --ut-c1: #89b4fa;
+  --ut-c2: #fab387;
+  --ut-c3: #cba6f7;
+  --ut-c4: #a6e3a1;
+  --ut-c5: #f9e2af;
+  --ut-icon-filter: invert(0.85);
+  --ut-logo-filter: brightness(0) invert(0.9);
+  --ut-shadow-k: 3;
+}

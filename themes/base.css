@@ -1,0 +1,388 @@
+/*
+ * Közös réteg: Unics elemek → téma-változók.
+ * A témafájlok (dark.css, nord.css, ...) csak a változókat adják meg.
+ *
+ * Szabályok:
+ * - Csak stabil osztályokra építünk (Mui*, rbc-*, saját Unics nevek, #id).
+ *   A "jss12" típusú osztályok buildenként változnak – ezeket kerüljük.
+ * - Mindenhol background-color, nem background: így megmaradnak a
+ *   háttérképként rajzolt ikonok és bannerek.
+ * - !important kell, mert a MUI futásidőben szúrja be a saját stílusait.
+ *
+ * A kiemelő avatarokat (.avatar) szándékosan nem színezzük át.
+ */
+
+/* ---------- Automatikusan megjelölt elemek (surface-tagger.js) ----------
+ * Minden színtémánál aktív. A fájl elején áll, hogy a lenti konkrét
+ * szabályok (pl. #leftmenu, li.current) felülírhassák.
+ */
+
+html[data-unics-theme] [data-ut-bg="surface"] {
+  background-color: var(--ut-surface) !important;
+}
+html[data-unics-theme] [data-ut-bg="surface-2"] {
+  background-color: var(--ut-surface-2) !important;
+}
+html[data-unics-theme] [data-ut-fg] {
+  color: var(--ut-fg) !important;
+}
+/* Vékony világos elválasztó → téma keretszín; vastag fehér sáv → háttér (rés) */
+html[data-unics-theme] [data-ut-border="line"] {
+  border-color: var(--ut-border) !important;
+}
+html[data-unics-theme] [data-ut-border="gap"] {
+  border-color: var(--ut-bg) !important;
+}
+html[data-unics-theme] [data-ut-before="surface"]::before,
+html[data-unics-theme] [data-ut-after="surface"]::after {
+  background-color: var(--ut-surface) !important;
+}
+html[data-unics-theme] [data-ut-before="surface-2"]::before,
+html[data-unics-theme] [data-ut-after="surface-2"]::after {
+  background-color: var(--ut-surface-2) !important;
+}
+
+/* ---------- Alap ---------- */
+
+html[data-unics-theme] body {
+  background-color: var(--ut-bg) !important;
+  color: var(--ut-fg) !important;
+}
+
+html[data-unics-theme] a:not([class*="Mui"]) {
+  color: var(--ut-accent) !important;
+}
+
+html[data-unics-theme] :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--ut-heading) !important;
+}
+
+html[data-unics-theme] ::selection {
+  background-color: var(--ut-accent);
+  color: var(--ut-accent-fg);
+}
+
+/* ---------- Váz: fejléc, bal menü ---------- */
+
+/* Fejléc: az Unics bannerképét (fejlec_graf.png) a téma színátmenete váltja le,
+   a szöveg a hozzá számolt (kontraszt-ellenőrzött) színt kapja.
+   A Modern és a többi stílus lapos fejléce ezt erősebb szelektorral felülírja. */
+html[data-unics-theme] #header {
+  background-color: var(--ut-header-bg, var(--ut-surface-2)) !important;
+  background-image: var(--ut-banner, none) !important;
+}
+html[data-unics-theme] #header :is(h1, h1 *, a, button, .MuiIconButton-root, .material-icons, .FontIcon2) {
+  color: var(--ut-banner-fg, #ffffff) !important;
+}
+
+/* Bal menü: saját háttér- és szövegszín (eltérhet a tartalomtól) */
+html[data-unics-theme] #leftmenu,
+html[data-unics-theme] .collapseMenuButton {
+  background-color: var(--ut-sidebar, var(--ut-surface-2)) !important;
+  color: var(--ut-sidebar-fg, var(--ut-fg)) !important;
+  border-color: var(--ut-border) !important;
+}
+/* Az Unics a menüpontokra saját (világos) színt tesz – explicit felülírjuk */
+html[data-unics-theme] aside#left > ul > li,
+html[data-unics-theme] aside#left > ul > li > a,
+html[data-unics-theme] aside#left li.showfavs ul li,
+html[data-unics-theme] .LayoutUserMenu,
+html[data-unics-theme] .LayoutUserMenu * {
+  color: var(--ut-sidebar-fg, var(--ut-fg)) !important;
+}
+html[data-unics-theme] aside#left > ul > li:hover {
+  background-color: color-mix(in srgb, var(--ut-sidebar-fg, var(--ut-fg)) 9%, transparent) !important;
+}
+html[data-unics-theme] .LayoutUserMenu:hover {
+  background-color: color-mix(in srgb, var(--ut-sidebar-fg, var(--ut-fg)) 7%, transparent) !important;
+}
+/* Az automatikus jelölés a tartalom színeit adná – a menüben a menü színei kellenek */
+html[data-unics-theme] #leftmenu [data-ut-fg] {
+  color: var(--ut-sidebar-fg, var(--ut-fg)) !important;
+}
+html[data-unics-theme] #leftmenu [data-ut-bg] {
+  background-color: var(--ut-sidebar, var(--ut-surface-2)) !important;
+}
+
+html[data-unics-theme] #header a {
+  color: inherit !important;
+}
+
+html[data-unics-theme] aside#left > ul > li.current,
+html[data-unics-theme] aside#left > ul > li.current:hover {
+  background-color: var(--ut-accent) !important;
+}
+html[data-unics-theme] aside#left > ul > li.current,
+html[data-unics-theme] aside#left > ul > li.current > a,
+html[data-unics-theme] aside#left > ul > li.current > a::before {
+  color: var(--ut-accent-fg) !important;
+}
+
+html[data-unics-theme] .dlclogo {
+  background-color: var(--ut-sidebar, var(--ut-surface-2)) !important;
+  color: var(--ut-fg) !important;
+}
+html[data-unics-theme] .dlclogo :is(img, svg) {
+  filter: var(--ut-logo-filter);
+}
+
+/* ---------- Kártyák, panelek (MUI Paper) ---------- */
+
+html[data-unics-theme] .MuiPaper-root {
+  background-color: var(--ut-surface) !important;
+  color: var(--ut-fg) !important;
+}
+
+/* Kezdőlap dobozai */
+html[data-unics-theme] section:is(.FavScenes, .Messages, .ToDos, .PersonalStats) {
+  background-color: var(--ut-surface) !important;
+  color: var(--ut-fg) !important;
+}
+
+/* Félév-fejlécek a kurzuslistában */
+html[data-unics-theme] .defaultBackgroundColor {
+  background-color: var(--ut-surface) !important;
+}
+html[data-unics-theme] .defaultColor {
+  color: var(--ut-muted) !important;
+}
+
+/* Kurzus eszköz-dobozok */
+html[data-unics-theme] ul.boxLayout {
+  background-color: var(--ut-surface-2) !important;
+  border-color: var(--ut-surface-2) !important;
+}
+html[data-unics-theme] li[class*="boxbg-"] {
+  background-color: var(--ut-surface) !important;
+}
+html[data-unics-theme] li[class*="boxbg-"] > div {
+  border-color: var(--ut-border) !important;
+}
+html[data-unics-theme] .ToolContainer :is(ul, li) {
+  border-color: var(--ut-border) !important;
+}
+
+/* Fórum */
+html[data-unics-theme] .forumItem {
+  background-color: var(--ut-row-alt) !important;
+}
+html[data-unics-theme] .DialogItem {
+  background-color: var(--ut-surface) !important;
+  border-color: var(--ut-border) !important;
+}
+
+/* Üzenetek bal panel */
+html[data-unics-theme] .leftpanel {
+  background-color: var(--ut-surface) !important;
+  border-color: var(--ut-border) !important;
+}
+
+/* ---------- Ikonok (span.svg-*) ---------- */
+
+html[data-unics-theme] span[class*="svg-"] {
+  filter: var(--ut-icon-filter);
+}
+
+/* ---------- Fülek ---------- */
+
+html[data-unics-theme] .MuiTabs-root {
+  background-color: var(--ut-surface) !important;
+  color: var(--ut-fg) !important;
+}
+html[data-unics-theme] .MuiTab-root {
+  color: var(--ut-muted) !important;
+}
+html[data-unics-theme] .MuiTab-root.Mui-selected {
+  color: var(--ut-accent) !important;
+}
+html[data-unics-theme] .MuiTabs-indicator {
+  background-color: var(--ut-accent) !important;
+}
+
+/* ---------- Gombok ---------- */
+
+html[data-unics-theme] .MuiButton-contained:not(.MuiButton-containedPrimary):not(.MuiButton-containedSecondary) {
+  background-color: var(--ut-surface-2) !important;
+  color: var(--ut-fg) !important;
+}
+html[data-unics-theme] :is(.MuiButton-containedPrimary, .MuiFab-primary) {
+  background-color: var(--ut-accent) !important;
+  color: var(--ut-accent-fg) !important;
+}
+html[data-unics-theme] :is(.MuiButton-containedSecondary, .MuiFab-secondary) {
+  background-color: var(--ut-accent-2) !important;
+  color: var(--ut-accent-2-fg) !important;
+}
+html[data-unics-theme] :is(.MuiButton-text, .MuiButton-outlined, .MuiIconButton-root) {
+  color: var(--ut-fg) !important;
+}
+html[data-unics-theme] .MuiButton-outlined {
+  border-color: var(--ut-border) !important;
+}
+
+html[data-unics-theme] .MuiToggleButton-root {
+  color: var(--ut-muted) !important;
+  border-color: var(--ut-border) !important;
+}
+html[data-unics-theme] .MuiToggleButton-root.Mui-selected {
+  background-color: var(--ut-surface-2) !important;
+  color: var(--ut-fg) !important;
+}
+
+/* ---------- Űrlapok ---------- */
+
+html[data-unics-theme] :is(.MuiInputBase-root, .MuiInputBase-input) {
+  color: var(--ut-fg) !important;
+}
+html[data-unics-theme] .MuiOutlinedInput-notchedOutline {
+  border-color: var(--ut-border) !important;
+}
+html[data-unics-theme] .MuiInput-underline::before {
+  border-bottom-color: var(--ut-border) !important;
+}
+html[data-unics-theme] :is(.MuiFormLabel-root, .MuiInputLabel-root, .MuiSelect-icon, .MuiCheckbox-root, .MuiRadio-root) {
+  color: var(--ut-muted) !important;
+}
+html[data-unics-theme] :is(input, textarea, select):not(.MuiInputBase-input) {
+  background-color: var(--ut-input-bg) !important;
+  color: var(--ut-fg) !important;
+  border-color: var(--ut-border) !important;
+}
+
+/* ---------- Szöveg, elválasztók ---------- */
+
+html[data-unics-theme] :is(.MuiTypography-colorTextSecondary, .MuiListItemText-secondary, .MuiCardHeader-subheader) {
+  color: var(--ut-muted) !important;
+}
+html[data-unics-theme] .MuiDivider-root {
+  background-color: var(--ut-border) !important;
+}
+html[data-unics-theme] .Mui-disabled {
+  opacity: 0.6;
+}
+
+/* ---------- Táblázatok ---------- */
+
+html[data-unics-theme] :is(table, th, td, .MuiTableCell-root) {
+  border-color: var(--ut-border) !important;
+  color: var(--ut-fg) !important;
+}
+html[data-unics-theme] :is(th, .MuiTableCell-head) {
+  background-color: var(--ut-surface-2) !important;
+}
+
+/* ---------- Naptár (react-big-calendar) ---------- */
+
+html[data-unics-theme] :is(.rbc-month-view, .rbc-customToolbar) {
+  background-color: var(--ut-surface) !important;
+  color: var(--ut-muted) !important;
+  border-color: var(--ut-border) !important;
+}
+html[data-unics-theme] .rbc-month-header {
+  background-color: var(--ut-accent-2) !important;
+  color: var(--ut-accent-2-fg) !important;
+}
+html[data-unics-theme] :is(.rbc-month-row, .rbc-day-bg, .rbc-header) {
+  border-color: var(--ut-border) !important;
+}
+html[data-unics-theme] .rbc-off-range-bg {
+  background-color: var(--ut-row-alt) !important;
+}
+html[data-unics-theme] .rbc-today {
+  background-color: var(--ut-surface-2) !important;
+}
+html[data-unics-theme] .rbc-now {
+  background-color: var(--ut-fg) !important;
+  color: var(--ut-bg) !important;
+}
+html[data-unics-theme] .rbc-event {
+  background-color: var(--ut-surface-2) !important;
+  color: var(--ut-fg) !important;
+}
+
+/* ======================================================================
+ * Többszínű réteg – az 5 színű paletta (--ut-c1…c5) használata,
+ * hogy a felület ne egyetlen kiemelőszínre épüljön.
+ * ====================================================================== */
+
+/* Menüikonok: mindegyik menüpont a saját színével */
+html[data-unics-theme] aside#left > ul > li:not(.current) > a::before { color: var(--ut-c1) !important; }
+html[data-unics-theme] aside#left > ul > li:nth-child(5n+2):not(.current) > a::before { color: var(--ut-c2) !important; }
+html[data-unics-theme] aside#left > ul > li:nth-child(5n+3):not(.current) > a::before { color: var(--ut-c3) !important; }
+html[data-unics-theme] aside#left > ul > li:nth-child(5n+4):not(.current) > a::before { color: var(--ut-c4) !important; }
+html[data-unics-theme] aside#left > ul > li:nth-child(5n+5):not(.current) > a::before { color: var(--ut-c5) !important; }
+
+/* Félév-gombok: színes pötty */
+html[data-unics-theme] [data-ut~="term-btn"]::before {
+  content: "";
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background-color: var(--ut-c1);
+}
+html[data-unics-theme] [data-ut~="term-btn"]:nth-child(5n+2)::before { background-color: var(--ut-c2); }
+html[data-unics-theme] [data-ut~="term-btn"]:nth-child(5n+3)::before { background-color: var(--ut-c3); }
+html[data-unics-theme] [data-ut~="term-btn"]:nth-child(5n+4)::before { background-color: var(--ut-c4); }
+html[data-unics-theme] [data-ut~="term-btn"]:nth-child(5n+5)::before { background-color: var(--ut-c5); }
+
+/* Kezdőlap dobozai: mindegyik saját színű fejléccel */
+html[data-unics-theme] section.FavScenes { --ut-sec: var(--ut-c1); --ut-sec-2: var(--ut-c3); }
+html[data-unics-theme] section.Messages { --ut-sec: var(--ut-c2); --ut-sec-2: var(--ut-c4); }
+html[data-unics-theme] section.ToDos { --ut-sec: var(--ut-c4); --ut-sec-2: var(--ut-c2); }
+html[data-unics-theme] section.PersonalStats { --ut-sec: var(--ut-c5); --ut-sec-2: var(--ut-c1); }
+html[data-unics-theme] section:is(.FavScenes, .Messages, .ToDos, .PersonalStats) > .head {
+  background-image: linear-gradient(120deg,
+    color-mix(in srgb, var(--ut-sec) 26%, var(--ut-surface)),
+    color-mix(in srgb, var(--ut-sec-2) 14%, var(--ut-surface))) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--ut-sec) 30%, var(--ut-border));
+}
+html[data-unics-theme] section:is(.FavScenes, .Messages, .ToDos, .PersonalStats) > .head :is(h2, h2 *) {
+  color: var(--ut-heading) !important;
+}
+
+/* Kurzus szakaszai ("Információk", "Tananyag"): színes felső sáv, sorban */
+html[data-unics-theme] .MuiCard-root.ToolContainer {
+  border-top: 3px solid var(--ut-c1) !important;
+}
+html[data-unics-theme] .MuiCard-root.ToolContainer:nth-of-type(5n+2) { border-top-color: var(--ut-c2) !important; }
+html[data-unics-theme] .MuiCard-root.ToolContainer:nth-of-type(5n+3) { border-top-color: var(--ut-c3) !important; }
+html[data-unics-theme] .MuiCard-root.ToolContainer:nth-of-type(5n+4) { border-top-color: var(--ut-c4) !important; }
+html[data-unics-theme] .MuiCard-root.ToolContainer:nth-of-type(5n+5) { border-top-color: var(--ut-c5) !important; }
+
+/* Naptár: események típus szerint színezve */
+html[data-unics-theme] .rbc-month-header {
+  background-image: linear-gradient(90deg, var(--ut-c1), var(--ut-c2)) !important;
+}
+html[data-unics-theme] .rbc-event { --ut-ev: var(--ut-c1); }
+html[data-unics-theme] .rbc-event.ctcolor-Survey { --ut-ev: var(--ut-c2); }
+html[data-unics-theme] .rbc-event.ctcolor-SimpleTask { --ut-ev: var(--ut-c3); }
+html[data-unics-theme] .rbc-event.ctcolor-Attendance { --ut-ev: var(--ut-c4); }
+html[data-unics-theme] .rbc-event {
+  background-color: color-mix(in srgb, var(--ut-ev) 22%, var(--ut-surface)) !important;
+  color: var(--ut-heading) !important;
+  box-shadow: inset 3px 0 0 var(--ut-ev) !important;
+}
+
+/* Fülek jelölője és a lebegő gomb: színátmenet */
+html[data-unics-theme] .MuiTabs-indicator {
+  background-image: linear-gradient(90deg, var(--ut-c1), var(--ut-c2)) !important;
+}
+html[data-unics-theme] .MuiFab-secondary {
+  background-image: linear-gradient(135deg, var(--ut-accent-2), color-mix(in srgb, var(--ut-accent-2) 55%, var(--ut-c3))) !important;
+}
+
+/* Félév-gombok szövege: az Unics #9e9e9e-t ad, ami világos témán halvány */
+html[data-unics-theme] [data-ut~="term-btn"],
+html[data-unics-theme] [data-ut~="term-btn"] * {
+  color: var(--ut-fg) !important;
+}
+
+/* ---------- Színterek: csoportfejléc szürke nyíl-doboza ----------
+ * A content/features.js jelöli meg (data-ut-arrow), melyik álelem a szürke doboz. */
+html[data-unics-theme] h2[data-ut-arrow="before"]::before,
+html[data-unics-theme] h2[data-ut-arrow="after"]::after {
+  background-color: var(--ut-accent) !important;
+  color: var(--ut-accent-fg) !important;
+}

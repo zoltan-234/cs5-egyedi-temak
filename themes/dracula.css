@@ -1,0 +1,36 @@
+/* Dracula – generálva: tools/build-themes.py */
+html[data-unics-theme="dracula"] {
+  color-scheme: dark;
+  --ut-bg: #282a36;
+  --ut-sidebar: #21222c;
+  --ut-sidebar-fg: #f8f8f2;
+  --ut-sidebar-muted: #b0b6cf;
+  --ut-surface: #2f3142;
+  --ut-surface-2: #3a3d50;
+  --ut-row-alt: #2b2d3a;
+  --ut-input-bg: #21222c;
+  --ut-border: #4d5066;
+  --ut-fg: #f8f8f2;
+  --ut-muted: #b0b6cf;
+  --ut-heading: #ffffff;
+  --ut-accent: #bd93f9;
+  --ut-accent-fg: #21222c;
+  --ut-accent-2: #ff79c6;
+  --ut-accent-2-fg: #21222c;
+  --ut-star: #f1fa8c;
+  --ut-success: #50fa7b;
+  --ut-header-bg: #21222c;
+  --ut-header-fg: #ffffff;
+  --ut-header-grad: none;
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #21222c 0%, #50446a 100%);
+  --ut-banner-fg: #ffffff;
+  --ut-c1: #8be9fd;
+  --ut-c2: #ff79c6;
+  --ut-c3: #bd93f9;
+  --ut-c4: #50fa7b;
+  --ut-c5: #ffb86c;
+  --ut-icon-filter: invert(0.85);
+  --ut-logo-filter: brightness(0) invert(0.9);
+  --ut-shadow-k: 3;
+}

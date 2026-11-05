@@ -1,0 +1,36 @@
+/* AMOLED fekete – generálva: tools/build-themes.py */
+html[data-unics-theme="amoled"] {
+  color-scheme: dark;
+  --ut-bg: #000000;
+  --ut-sidebar: #000000;
+  --ut-sidebar-fg: #e6e6e9;
+  --ut-sidebar-muted: #9d9da6;
+  --ut-surface: #0b0b0d;
+  --ut-surface-2: #151518;
+  --ut-row-alt: #070708;
+  --ut-input-bg: #0b0b0d;
+  --ut-border: #26262b;
+  --ut-fg: #e6e6e9;
+  --ut-muted: #9d9da6;
+  --ut-heading: #ffffff;
+  --ut-accent: #a78bfa;
+  --ut-accent-fg: #0b0b0d;
+  --ut-accent-2: #fb7185;
+  --ut-accent-2-fg: #000000;
+  --ut-star: #fcd34d;
+  --ut-success: #34d399;
+  --ut-header-bg: #000000;
+  --ut-header-fg: #ffffff;
+  --ut-header-grad: none;
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #000000 0%, #322a4b 100%);
+  --ut-banner-fg: #ffffff;
+  --ut-c1: #60a5fa;
+  --ut-c2: #fb7185;
+  --ut-c3: #a78bfa;
+  --ut-c4: #34d399;
+  --ut-c5: #fcd34d;
+  --ut-icon-filter: invert(0.85);
+  --ut-logo-filter: brightness(0) invert(0.9);
+  --ut-shadow-k: 3;
+}

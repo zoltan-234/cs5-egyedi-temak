@@ -1,0 +1,36 @@
+/* Gruvbox – generálva: tools/build-themes.py */
+html[data-unics-theme="gruvbox"] {
+  color-scheme: dark;
+  --ut-bg: #282828;
+  --ut-sidebar: #1d2021;
+  --ut-sidebar-fg: #ebdbb2;
+  --ut-sidebar-muted: #bdae93;
+  --ut-surface: #32302f;
+  --ut-surface-2: #3c3836;
+  --ut-row-alt: #2d2b2a;
+  --ut-input-bg: #1d2021;
+  --ut-border: #504945;
+  --ut-fg: #ebdbb2;
+  --ut-muted: #bdae93;
+  --ut-heading: #fbf1c7;
+  --ut-accent: #fabd2f;
+  --ut-accent-fg: #282828;
+  --ut-accent-2: #fe8019;
+  --ut-accent-2-fg: #282828;
+  --ut-star: #d79921;
+  --ut-success: #b8bb26;
+  --ut-header-bg: #1d2021;
+  --ut-header-fg: #fbf1c7;
+  --ut-header-grad: none;
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #1d2021 0%, #5f4f25 100%);
+  --ut-banner-fg: #fbf1c7;
+  --ut-c1: #83a598;
+  --ut-c2: #fe8019;
+  --ut-c3: #d3869b;
+  --ut-c4: #b8bb26;
+  --ut-c5: #fabd2f;
+  --ut-icon-filter: invert(0.85);
+  --ut-logo-filter: brightness(0) invert(0.9);
+  --ut-shadow-k: 3;
+}

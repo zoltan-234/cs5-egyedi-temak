@@ -1,0 +1,130 @@
+/* ÜVEG – áttetsző, elmosott panelek színes ambient háttéren.
+   Az alap (modern) tokenjeit írjuk át, a többi szabály ezekből dolgozik. */
+
+html[data-unics-layout="glass"] {
+  --m-r-sm: 12px;
+  --m-r-md: 16px;
+  --m-r-lg: 26px;
+  --m-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --g-pane: color-mix(in srgb, var(--m-surface) 58%, transparent);
+  --g-pane-hi: color-mix(in srgb, var(--m-surface) 78%, transparent);
+  --g-edge: color-mix(in srgb, var(--m-heading) 14%, transparent);
+  --g-shine: inset 0 1px 0 color-mix(in srgb, #fff 55%, transparent);
+  --m-shadow-1: 0 1px 2px rgb(0 0 0 / 0.05), 0 6px 20px -6px rgb(0 0 0 / 0.14);
+  --m-shadow-2: 0 4px 10px rgb(0 0 0 / 0.06), 0 22px 44px -14px rgb(0 0 0 / 0.26);
+  --m-shadow-3: 0 30px 60px -24px rgb(0 0 0 / 0.38);
+}
+
+/* Ambient háttér: a téma 3 színéből elmosott foltok, görgetéskor nem mozognak */
+html[data-unics-layout="glass"][data-unics-theme] body {
+  background-color: var(--m-bg) !important;
+  background-image:
+    radial-gradient(60vw 50vh at 8% 4%, color-mix(in srgb, var(--ut-c1, var(--m-accent)) 34%, transparent), transparent 70%),
+    radial-gradient(55vw 55vh at 96% 12%, color-mix(in srgb, var(--ut-c3, var(--m-accent-2)) 30%, transparent), transparent 70%),
+    radial-gradient(70vw 60vh at 60% 104%, color-mix(in srgb, var(--ut-c2, var(--m-accent-2)) 28%, transparent), transparent 70%) !important;
+  background-attachment: fixed !important;
+}
+html[data-unics-layout="glass"] :is(#content, .DLCLayout, #root, #app) {
+  background-color: transparent !important;
+}
+
+/* Üvegfelületek */
+html[data-unics-layout="glass"][data-unics-theme] :is(.MuiCard-root, section.FavScenes, section.Messages, section.ToDos, section.PersonalStats, .MuiPaper-root.MuiPaper-rounded, [data-ut~="view-bar"], h2.defaultBackgroundColor, .MuiToggleButtonGroup-root, .rbc-month-view, .MuiTabs-root) {
+  background-color: var(--g-pane) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.5);
+  backdrop-filter: blur(22px) saturate(1.5);
+  border: 1px solid var(--g-edge) !important;
+  box-shadow: var(--g-shine), var(--m-shadow-1) !important;
+}
+html[data-unics-layout="glass"][data-unics-theme] :is(.MuiCard-root, section.FavScenes, section.Messages, section.ToDos, section.PersonalStats):hover {
+  background-color: var(--g-pane-hi) !important;
+  border-color: color-mix(in srgb, var(--m-accent) 40%, var(--g-edge)) !important;
+}
+html[data-unics-layout="glass"][data-unics-theme] #content .MuiCard-root:not(.ToolContainer):not(.profile .MuiCard-root):not(.leftpanel .MuiCard-root):hover {
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: var(--g-shine), var(--m-shadow-3), 0 0 48px -8px color-mix(in srgb, var(--m-accent) 45%, transparent) !important;
+}
+/* A felületjelölő által fehérre jelölt belső elemek legyenek átlátszók az üvegen */
+html[data-unics-layout="glass"][data-unics-theme] :is(.MuiCard-root, section) [data-ut-bg="surface"] {
+  background-color: transparent !important;
+}
+
+/* Menü: lebegő üveglap */
+html[data-unics-layout="glass"][data-unics-theme] #leftmenu {
+  background-color: color-mix(in srgb, var(--m-sidebar) 72%, transparent) !important;
+  /* NINCS backdrop-filter: az új tartalmazó blokkot hozna létre, és a menü
+     fix/abszolút pozíciójú elemeit (logó, név-kártya) elmozgatná. */
+  border-right: 1px solid var(--g-edge) !important;
+}
+html[data-unics-layout="glass"][data-unics-theme] .dlclogo {
+  /* ugyanaz a szín és áttetszőség, mint a menün – a logó sáv a menü fölött
+     ül, ezért nem örökli a menü hátterét */
+  background-color: color-mix(in srgb, var(--m-sidebar) 72%, transparent) !important;
+  border-right: 1px solid var(--g-edge);
+}
+html[data-unics-layout="glass"] aside#left > ul > li {
+  border-radius: 999px !important;
+  margin: 3px 14px !important;
+}
+html[data-unics-layout="glass"] aside#left > ul > li.current,
+html[data-unics-layout="glass"] aside#left > ul > li.current:hover {
+  background-color: color-mix(in srgb, var(--m-accent) 26%, transparent) !important;
+  box-shadow: var(--g-shine), 0 6px 20px -8px var(--m-accent);
+}
+
+/* Fejléc: áttetsző, elmosott */
+html[data-unics-layout="glass"][data-unics-theme] #header {
+  background-color: color-mix(in srgb, var(--ut-header-bg, var(--m-sidebar)) 70%, transparent) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.5);
+  backdrop-filter: blur(22px) saturate(1.5);
+}
+
+/* Fülek: üveg-pirula */
+html[data-unics-layout="glass"] .MuiTabs-root {
+  border-radius: 999px !important;
+  padding: 4px;
+  margin-bottom: 14px;
+}
+html[data-unics-layout="glass"] .MuiTab-root {
+  border-radius: 999px !important;
+  min-height: 42px !important;
+  z-index: 1;
+}
+html[data-unics-layout="glass"] .MuiTabs-indicator {
+  height: calc(100% - 8px) !important;
+  top: 4px;
+  bottom: auto !important;
+  border-radius: 999px !important;
+  background-color: color-mix(in srgb, var(--m-accent) 22%, transparent) !important;
+  background-image: none !important;
+  box-shadow: var(--g-shine), 0 6px 18px -6px var(--m-accent);
+}
+
+/* Gombok és mezők */
+html[data-unics-layout="glass"] .MuiButton-root,
+html[data-unics-layout="glass"] [data-ut~="term-btn"] {
+  border-radius: 999px !important;
+}
+html[data-unics-layout="glass"][data-unics-theme] [data-ut~="term-btn"] {
+  background-color: var(--g-pane) !important;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-color: var(--g-edge);
+}
+html[data-unics-layout="glass"] :is(.MuiButton-containedPrimary, .MuiButton-containedSecondary, .MuiFab-root) {
+  box-shadow: var(--g-shine), 0 10px 24px -10px currentColor !important;
+}
+html[data-unics-layout="glass"][data-unics-theme] .MuiInput-underline,
+html[data-unics-layout="glass"][data-unics-theme] .MuiOutlinedInput-root {
+  background-color: color-mix(in srgb, var(--m-input) 60%, transparent) !important;
+  border-radius: 999px !important;
+  padding-left: 18px;
+}
+html[data-unics-layout="glass"] :is(.MuiDialog-paper, .MuiPopover-paper, .MuiMenu-paper) {
+  background-color: color-mix(in srgb, var(--m-surface) 80%, transparent) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(1.6);
+  backdrop-filter: blur(28px) saturate(1.6);
+}
+html[data-unics-layout="glass"] .MuiBackdrop-root {
+  backdrop-filter: blur(10px) saturate(1.2);
+}

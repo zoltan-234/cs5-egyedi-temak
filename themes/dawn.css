@@ -1,0 +1,36 @@
+/* Rosé Pine Dawn – generálva: tools/build-themes.py */
+html[data-unics-theme="dawn"] {
+  color-scheme: light;
+  --ut-bg: #faf4ed;
+  --ut-sidebar: #fffaf3;
+  --ut-sidebar-fg: #575279;
+  --ut-sidebar-muted: #65617c;
+  --ut-surface: #fffaf3;
+  --ut-surface-2: #f2e9e1;
+  --ut-row-alt: #f8f1e9;
+  --ut-input-bg: #fffaf3;
+  --ut-border: #dfdad9;
+  --ut-fg: #575279;
+  --ut-muted: #65617c;
+  --ut-heading: #464261;
+  --ut-accent: #286983;
+  --ut-accent-fg: #fffaf3;
+  --ut-accent-2: #a2566c;
+  --ut-accent-2-fg: #fffaf3;
+  --ut-star: #a8670f;
+  --ut-success: #3e7a62;
+  --ut-header-bg: #fffaf3;
+  --ut-header-fg: #464261;
+  --ut-header-grad: none;
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #286983 0%, #1d4c5e 100%);
+  --ut-banner-fg: #fffaf3;
+  --ut-c1: #286983;
+  --ut-c2: #b4637a;
+  --ut-c3: #907aa9;
+  --ut-c4: #c2780f;
+  --ut-c5: #56949f;
+  --ut-icon-filter: none;
+  --ut-logo-filter: none;
+  --ut-shadow-k: 1;
+}

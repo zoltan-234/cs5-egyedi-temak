@@ -1,0 +1,8 @@
+name: Téma- vagy ötletkérés / Theme or idea request
+description: Új színtéma, stílus vagy funkció javaslata / Suggest a new theme, style or feature
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes: { label: "Mit szeretnél? / What would you like?", description: "Pl. egy téma színeivel, hangulatával, mintaképpel / e.g. colours, mood, a reference image" }
+    validations: { required: true }

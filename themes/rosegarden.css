@@ -1,0 +1,36 @@
+/* Rózsakert – generálva: tools/build-themes.py */
+html[data-unics-theme="rosegarden"] {
+  color-scheme: light;
+  --ut-bg: #fbf6f1;
+  --ut-sidebar: #5b1a43;
+  --ut-sidebar-fg: #ffe9f4;
+  --ut-sidebar-muted: #e0aecb;
+  --ut-surface: #ffffff;
+  --ut-surface-2: #f8ecef;
+  --ut-row-alt: #fdf9f7;
+  --ut-input-bg: #ffffff;
+  --ut-border: #ecdcd9;
+  --ut-fg: #3b2430;
+  --ut-muted: #6f5260;
+  --ut-heading: #2a1420;
+  --ut-accent: #b0216b;
+  --ut-accent-fg: #ffffff;
+  --ut-accent-2: #2f7d5a;
+  --ut-accent-2-fg: #ffffff;
+  --ut-star: #a86410;
+  --ut-success: #2f7d5a;
+  --ut-header-bg: #b0216b;
+  --ut-header-fg: #ffffff;
+  --ut-header-grad: linear-gradient(110deg, #9d1b5f 0%, #c8406a 55%, #c4542a 100%);
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #9d1b5f 0%, #c8406a 55%, #c4542a 100%);
+  --ut-banner-fg: #ffffff;
+  --ut-c1: #b0216b;
+  --ut-c2: #2f7d5a;
+  --ut-c3: #e0607e;
+  --ut-c4: #c27a00;
+  --ut-c5: #6a4c93;
+  --ut-icon-filter: none;
+  --ut-logo-filter: none;
+  --ut-shadow-k: 1;
+}

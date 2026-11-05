@@ -1,0 +1,36 @@
+/* Neon – generálva: tools/build-themes.py */
+html[data-unics-theme="neon"] {
+  color-scheme: dark;
+  --ut-bg: #07070d;
+  --ut-sidebar: #0c0c18;
+  --ut-sidebar-fg: #e9e9ff;
+  --ut-sidebar-muted: #9a9ac8;
+  --ut-surface: #10101e;
+  --ut-surface-2: #181830;
+  --ut-row-alt: #0c0c17;
+  --ut-input-bg: #0b0b16;
+  --ut-border: #26264a;
+  --ut-fg: #e6e6ff;
+  --ut-muted: #a0a0cc;
+  --ut-heading: #ffffff;
+  --ut-accent: #22d3ee;
+  --ut-accent-fg: #07070d;
+  --ut-accent-2: #ff4fd8;
+  --ut-accent-2-fg: #07070d;
+  --ut-star: #facc15;
+  --ut-success: #a3e635;
+  --ut-header-bg: #0c0c18;
+  --ut-header-fg: #ffffff;
+  --ut-header-grad: linear-gradient(110deg, #0c0c18 0%, #2a0b3e 50%, #06303a 100%);
+  --ut-glow: rgba(34, 211, 238, 0.30);
+  --ut-banner: linear-gradient(110deg, #0c0c18 0%, #2a0b3e 50%, #06303a 100%);
+  --ut-banner-fg: #ffffff;
+  --ut-c1: #22d3ee;
+  --ut-c2: #ff4fd8;
+  --ut-c3: #a3e635;
+  --ut-c4: #facc15;
+  --ut-c5: #818cf8;
+  --ut-icon-filter: invert(0.85);
+  --ut-logo-filter: brightness(0) invert(0.9);
+  --ut-shadow-k: 3;
+}

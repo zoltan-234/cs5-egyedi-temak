@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <title>CS5 Témák</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>CS5 Témák</h1>
+    <p class="sub">A választás csak ebben a böngészőben tárolódik.</p>
+  </header>
+
+  <div id="perm" class="perm" hidden>
+    <p>A bővítménynek engedély kell a CooSpace 5 oldalhoz.</p>
+    <button id="perm-btn" type="button">Engedélyezés</button>
+  </div>
+
+  <h2 class="group">Színek</h2>
+  <ul id="themes" class="options" role="radiogroup" aria-label="Színtéma"></ul>
+
+  <h2 class="group">Stílus</h2>
+  <ul id="layouts" class="options" role="radiogroup" aria-label="Stílus"></ul>
+
+  <h2 class="group">Funkciók</h2>
+  <div class="features" id="features">
+
+    <div class="feat">
+      <label class="row">
+        <input type="checkbox" id="f-start">
+        <span>Induláskor a Színterek oldalra</span>
+      </label>
+      <button type="button" class="info" aria-label="Mit csinál ez?" data-tip="f-start-tip">i</button>
+      <p class="tip" id="f-start-tip" hidden>Bejelentkezés után (vagy a CooSpace megnyitásakor) rögtön a Színterek oldalra visz, bármelyik oldalon is landolnál (pl. Áttekintés, Profil). Csak egyszer ugrik böngészőfülenként, utána bárhová el lehet menni.</p>
+    </div>
+
+    <div class="feat">
+      <div class="row">
+        <label for="f-mode">Csoportok a Színtereken</label>
+        <select id="f-mode">
+          <option value="original">Eredeti</option>
+          <option value="closed">Mind csukva</option>
+          <option value="open">Mind nyitva</option>
+          <option value="current">Csak az aktuális félév nyitva</option>
+        </select>
+      </div>
+      <button type="button" class="info" aria-label="Mit csinál ez?" data-tip="f-mode-tip">i</button>
+      <p class="tip" id="f-mode-tip" hidden>Megadja, hogy a Színterek oldalon a csoportok (Állandó, 2026/27/1 …) nyitva vagy csukva legyenek betöltéskor. „Aktuális félév”: a legfelső, félévnek látszó csoport (pl. 2026/27/1) marad nyitva, az Állandó és a régi félévek csukva.</p>
+    </div>
+
+    <div class="feat">
+      <label class="row">
+        <input type="checkbox" id="f-remember">
+        <span>Emlékezz a csoportokra</span>
+      </label>
+      <button type="button" class="info" aria-label="Mit csinál ez?" data-tip="f-remember-tip">i</button>
+      <p class="tip" id="f-remember-tip" hidden>Amit te kinyitsz vagy becsukol (pl. csak az „Állandó”-t csukod be), azt név szerint megjegyzi, és legközelebb így tölti be. Ez erősebb az alapmódnál: az új csoportokra az alapmód vonatkozik, a megjegyzettekre a te választásod.</p>
+      <button type="button" class="link" id="f-forget">Megjegyzett csoportok törlése</button>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://unics.szte.hu/Home" target="_blank" rel="noopener">CooSpace megnyitása</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

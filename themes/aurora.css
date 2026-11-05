@@ -1,0 +1,36 @@
+/* Aurora – generálva: tools/build-themes.py */
+html[data-unics-theme="aurora"] {
+  color-scheme: dark;
+  --ut-bg: #0e1022;
+  --ut-sidebar: #14163a;
+  --ut-sidebar-fg: #e7e8ff;
+  --ut-sidebar-muted: #a9acd6;
+  --ut-surface: #171a33;
+  --ut-surface-2: #20244a;
+  --ut-row-alt: #13152c;
+  --ut-input-bg: #0f1126;
+  --ut-border: #2c3163;
+  --ut-fg: #dfe2ff;
+  --ut-muted: #a2a7d4;
+  --ut-heading: #ffffff;
+  --ut-accent: #8b9cff;
+  --ut-accent-fg: #0e1022;
+  --ut-accent-2: #ff7ab6;
+  --ut-accent-2-fg: #0e1022;
+  --ut-star: #ffd166;
+  --ut-success: #4ade80;
+  --ut-header-bg: #5b21b6;
+  --ut-header-fg: #ffffff;
+  --ut-header-grad: linear-gradient(110deg, #4338ca 0%, #7e22ce 45%, #be185d 100%);
+  --ut-glow: rgba(167, 139, 250, 0.28);
+  --ut-banner: linear-gradient(110deg, #4338ca 0%, #7e22ce 45%, #be185d 100%);
+  --ut-banner-fg: #ffffff;
+  --ut-c1: #60a5fa;
+  --ut-c2: #a78bfa;
+  --ut-c3: #f472b6;
+  --ut-c4: #fbbf24;
+  --ut-c5: #34d399;
+  --ut-icon-filter: invert(0.85);
+  --ut-logo-filter: brightness(0) invert(0.9);
+  --ut-shadow-k: 3;
+}

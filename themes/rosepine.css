@@ -1,0 +1,36 @@
+/* Rosé Pine – generálva: tools/build-themes.py */
+html[data-unics-theme="rosepine"] {
+  color-scheme: dark;
+  --ut-bg: #191724;
+  --ut-sidebar: #16141f;
+  --ut-sidebar-fg: #e0def4;
+  --ut-sidebar-muted: #a29fbd;
+  --ut-surface: #1f1d2e;
+  --ut-surface-2: #26233a;
+  --ut-row-alt: #1c1a29;
+  --ut-input-bg: #16141f;
+  --ut-border: #403d52;
+  --ut-fg: #e0def4;
+  --ut-muted: #a29fbd;
+  --ut-heading: #f4f2ff;
+  --ut-accent: #c4a7e7;
+  --ut-accent-fg: #191724;
+  --ut-accent-2: #ebbcba;
+  --ut-accent-2-fg: #191724;
+  --ut-star: #f6c177;
+  --ut-success: #9ccfd8;
+  --ut-header-bg: #16141f;
+  --ut-header-fg: #f4f2ff;
+  --ut-header-grad: none;
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #16141f 0%, #4a405b 100%);
+  --ut-banner-fg: #f4f2ff;
+  --ut-c1: #9ccfd8;
+  --ut-c2: #ebbcba;
+  --ut-c3: #c4a7e7;
+  --ut-c4: #f6c177;
+  --ut-c5: #eb6f92;
+  --ut-icon-filter: invert(0.85);
+  --ut-logo-filter: brightness(0) invert(0.9);
+  --ut-shadow-k: 3;
+}

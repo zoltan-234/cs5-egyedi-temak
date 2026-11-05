@@ -1,0 +1,36 @@
+/* Naplemente – generálva: tools/build-themes.py */
+html[data-unics-theme="sunset"] {
+  color-scheme: light;
+  --ut-bg: #fff8f1;
+  --ut-sidebar: #10454f;
+  --ut-sidebar-fg: #e8fbf8;
+  --ut-sidebar-muted: #a7d5cf;
+  --ut-surface: #ffffff;
+  --ut-surface-2: #ffeede;
+  --ut-row-alt: #fffbf6;
+  --ut-input-bg: #ffffff;
+  --ut-border: #f1dcc8;
+  --ut-fg: #3a2a22;
+  --ut-muted: #6e5546;
+  --ut-heading: #2a1a12;
+  --ut-accent: #0f7a72;
+  --ut-accent-fg: #ffffff;
+  --ut-accent-2: #c2410c;
+  --ut-accent-2-fg: #ffffff;
+  --ut-star: #a86410;
+  --ut-success: #2f855a;
+  --ut-header-bg: #ff9a6b;
+  --ut-header-fg: #2a1a12;
+  --ut-header-grad: linear-gradient(110deg, #ff7e5f 0%, #feb47b 100%);
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #ff7e5f 0%, #feb47b 100%);
+  --ut-banner-fg: #2a1a12;
+  --ut-c1: #0f7a72;
+  --ut-c2: #d9480f;
+  --ut-c3: #c2185b;
+  --ut-c4: #b7791f;
+  --ut-c5: #3b5bdb;
+  --ut-icon-filter: none;
+  --ut-logo-filter: none;
+  --ut-shadow-k: 1;
+}

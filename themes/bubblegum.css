@@ -1,0 +1,36 @@
+/* Bubblegum – generálva: tools/build-themes.py */
+html[data-unics-theme="bubblegum"] {
+  color-scheme: dark;
+  --ut-bg: #1a0d17;
+  --ut-sidebar: #220f1e;
+  --ut-sidebar-fg: #ffe4f2;
+  --ut-sidebar-muted: #d9a3c2;
+  --ut-surface: #26131f;
+  --ut-surface-2: #33182a;
+  --ut-row-alt: #1f0f1b;
+  --ut-input-bg: #1a0d17;
+  --ut-border: #4a2340;
+  --ut-fg: #f7d9ea;
+  --ut-muted: #cf9dbb;
+  --ut-heading: #fff0f8;
+  --ut-accent: #ff6fb5;
+  --ut-accent-fg: #1a0d17;
+  --ut-accent-2: #7ee0ff;
+  --ut-accent-2-fg: #1a0d17;
+  --ut-star: #ffd166;
+  --ut-success: #7ee8a2;
+  --ut-header-bg: #7a1d5c;
+  --ut-header-fg: #fff0f8;
+  --ut-header-grad: linear-gradient(110deg, #3b0f2f 0%, #7a1d5c 55%, #b8336a 100%);
+  --ut-glow: rgba(255, 111, 181, 0.30);
+  --ut-banner: linear-gradient(110deg, #3b0f2f 0%, #7a1d5c 55%, #b8336a 100%);
+  --ut-banner-fg: #fff0f8;
+  --ut-c1: #ff6fb5;
+  --ut-c2: #7ee0ff;
+  --ut-c3: #c4a7ff;
+  --ut-c4: #ffd166;
+  --ut-c5: #7ee8a2;
+  --ut-icon-filter: invert(0.85);
+  --ut-logo-filter: brightness(0) invert(0.9);
+  --ut-shadow-k: 3;
+}

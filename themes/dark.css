@@ -1,0 +1,36 @@
+/* Midnight – generálva: tools/build-themes.py */
+html[data-unics-theme="dark"] {
+  color-scheme: dark;
+  --ut-bg: #0d1016;
+  --ut-sidebar: #10141a;
+  --ut-sidebar-fg: #d8dce5;
+  --ut-sidebar-muted: #9aa1b0;
+  --ut-surface: #151920;
+  --ut-surface-2: #1a1f29;
+  --ut-row-alt: #12161d;
+  --ut-input-bg: #12161d;
+  --ut-border: #232835;
+  --ut-fg: #d8dce5;
+  --ut-muted: #9aa1b0;
+  --ut-heading: #f3f5f9;
+  --ut-accent: #7aa2f7;
+  --ut-accent-fg: #0d1016;
+  --ut-accent-2: #f07a5a;
+  --ut-accent-2-fg: #0d1016;
+  --ut-star: #f5c76b;
+  --ut-success: #5fd39a;
+  --ut-header-bg: #10141a;
+  --ut-header-fg: #f3f5f9;
+  --ut-header-grad: none;
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #10141a 0%, #303f5c 100%);
+  --ut-banner-fg: #f3f5f9;
+  --ut-c1: #7aa2f7;
+  --ut-c2: #f07a5a;
+  --ut-c3: #c4a7e7;
+  --ut-c4: #5fd39a;
+  --ut-c5: #f5c76b;
+  --ut-icon-filter: invert(0.85);
+  --ut-logo-filter: brightness(0) invert(0.9);
+  --ut-shadow-k: 3;
+}

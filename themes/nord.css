@@ -1,0 +1,36 @@
+/* Nord – generálva: tools/build-themes.py */
+html[data-unics-theme="nord"] {
+  color-scheme: dark;
+  --ut-bg: #2e3440;
+  --ut-sidebar: #2a2f3a;
+  --ut-sidebar-fg: #e5e9f0;
+  --ut-sidebar-muted: #b8c1cf;
+  --ut-surface: #3b4252;
+  --ut-surface-2: #434c5e;
+  --ut-row-alt: #353c4a;
+  --ut-input-bg: #2e3440;
+  --ut-border: #4c566a;
+  --ut-fg: #e5e9f0;
+  --ut-muted: #b8c1cf;
+  --ut-heading: #eceff4;
+  --ut-accent: #88c0d0;
+  --ut-accent-fg: #2e3440;
+  --ut-accent-2: #d08770;
+  --ut-accent-2-fg: #1f232b;
+  --ut-star: #ebcb8b;
+  --ut-success: #a3be8c;
+  --ut-header-bg: #2a2f3a;
+  --ut-header-fg: #eceff4;
+  --ut-header-grad: none;
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #2a2f3a 0%, #465a67 100%);
+  --ut-banner-fg: #eceff4;
+  --ut-c1: #88c0d0;
+  --ut-c2: #d08770;
+  --ut-c3: #b48ead;
+  --ut-c4: #a3be8c;
+  --ut-c5: #ebcb8b;
+  --ut-icon-filter: invert(0.85);
+  --ut-logo-filter: brightness(0) invert(0.9);
+  --ut-shadow-k: 3;
+}

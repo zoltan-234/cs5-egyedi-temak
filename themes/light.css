@@ -1,0 +1,36 @@
+/* Világos modern – generálva: tools/build-themes.py */
+html[data-unics-theme="light"] {
+  color-scheme: light;
+  --ut-bg: #f7f7f5;
+  --ut-sidebar: #ffffff;
+  --ut-sidebar-fg: #26302c;
+  --ut-sidebar-muted: #5f6a65;
+  --ut-surface: #ffffff;
+  --ut-surface-2: #eef1ef;
+  --ut-row-alt: #f9faf9;
+  --ut-input-bg: #ffffff;
+  --ut-border: #d9dedb;
+  --ut-fg: #26302c;
+  --ut-muted: #5f6a65;
+  --ut-heading: #111816;
+  --ut-accent: #0f766e;
+  --ut-accent-fg: #ffffff;
+  --ut-accent-2: #c2410c;
+  --ut-accent-2-fg: #ffffff;
+  --ut-star: #a86410;
+  --ut-success: #15803d;
+  --ut-header-bg: #ffffff;
+  --ut-header-fg: #111816;
+  --ut-header-grad: none;
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #0f766e 0%, #0b554f 100%);
+  --ut-banner-fg: #ffffff;
+  --ut-c1: #0f766e;
+  --ut-c2: #c2410c;
+  --ut-c3: #6d28d9;
+  --ut-c4: #b45309;
+  --ut-c5: #2563eb;
+  --ut-icon-filter: none;
+  --ut-logo-filter: none;
+  --ut-shadow-k: 1;
+}

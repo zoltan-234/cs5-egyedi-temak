@@ -1,0 +1,45 @@
+# Kiadás: `git tag v0.6.0 && git push --tags`
+# Lépések: csomagok építése -> Firefox-aláírás (Mozilla, nem listázott) -> GitHub Release -> updates.json frissítése
+# Titkos beállítások (Settings -> Secrets and variables -> Actions): AMO_JWT_ISSUER, AMO_JWT_SECRET
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main, fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Verzió egyezik a címkével?
+        run: |
+          V=$(python3 -c "import json;print(json.load(open('manifest.json'))['version'])")
+          [ "v$V" = "${GITHUB_REF_NAME}" ] || { echo "manifest: $V, címke: $GITHUB_REF_NAME"; exit 1; }
+          echo "VER=$V" >> "$GITHUB_ENV"
+      - name: Csomagok
+        run: bash tools/build.sh
+      - name: Firefox aláírás
+        env:
+          AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
+          AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+        run: |
+          mkdir -p src-ff && unzip -q dist/cs5-temak-$VER-firefox.zip -d src-ff
+          npx --yes web-ext sign --source-dir src-ff --channel unlisted \
+            --api-key "$AMO_JWT_ISSUER" --api-secret "$AMO_JWT_SECRET" --artifacts-dir signed
+          mv signed/*.xpi dist/cs5-temak-$VER.xpi
+      - name: GitHub Release
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes \
+            dist/cs5-temak-$VER.xpi dist/cs5-temak-$VER-chromium.zip
+      - name: updates.json frissítése
+        run: |
+          python3 tools/update-updates-json.py "$VER" "${GITHUB_REPOSITORY}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add updates.json
+          git commit -m "updates.json: $VER" && git push origin main

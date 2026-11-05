@@ -1,0 +1,67 @@
+{
+  "manifest_version": 3,
+  "name": "CS5 Témák",
+  "version": "0.7.0",
+  "description": "Választható designok a CooSpace 5 (CS5) felületéhez. A választás helyben, a böngészőben tárolódik.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://unics.szte.hu/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://unics.szte.hu/*"
+      ],
+      "js": [
+        "content/jss-resolver.js",
+        "content/surface-tagger.js",
+        "content/apply-theme.js",
+        "content/features.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "themes/*.css",
+        "themes/*.jpg",
+        "layouts/*.css",
+        "fonts/*.woff2"
+      ],
+      "matches": [
+        "https://unics.szte.hu/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "CS5 Témák",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "cs5-temak@zoltan-234",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      },
+      "update_url": "https://raw.githubusercontent.com/zoltan-234/cs5-egyedi-temak/main/updates.json"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

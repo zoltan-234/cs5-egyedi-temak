@@ -1,0 +1,27 @@
+name: Hibabejelentés / Bug report
+description: Valami rosszul néz ki vagy nem működik / Something looks wrong or does not work
+labels: ["bug"]
+body:
+  - type: input
+    id: browser
+    attributes: { label: "Böngésző és verzió / Browser and version", placeholder: "Firefox 140, Chrome 130, Edge, Brave…" }
+    validations: { required: true }
+  - type: input
+    id: version
+    attributes: { label: "Bővítmény verziója / Extension version", placeholder: "0.5.8" }
+  - type: input
+    id: theme
+    attributes: { label: "Téma és stílus / Theme and style", placeholder: "pl. Sakura + Szigetek" }
+    validations: { required: true }
+  - type: input
+    id: page
+    attributes: { label: "Melyik oldal a CooSpace-ben? / Which CooSpace page?", placeholder: "Színterek, Naptár, Dokumentumtár…" }
+  - type: textarea
+    id: what
+    attributes: { label: "Mi a gond? / What is wrong?" }
+    validations: { required: true }
+  - type: textarea
+    id: shot
+    attributes:
+      label: "Képernyőkép / Screenshot"
+      description: "Húzd ide a képet. Takard ki a nevedet és személyes adataidat! / Drag the image here. Hide your name and personal data!"

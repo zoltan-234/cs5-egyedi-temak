@@ -1,0 +1,36 @@
+/* CS5 friss – generálva: tools/build-themes.py */
+html[data-unics-theme="cs5-fresh"] {
+  color-scheme: light;
+  --ut-bg: #f4f6f8;
+  --ut-sidebar: #ffffff;
+  --ut-sidebar-fg: #1d2733;
+  --ut-sidebar-muted: #5b6876;
+  --ut-surface: #ffffff;
+  --ut-surface-2: #eef2f5;
+  --ut-row-alt: #f7f9fb;
+  --ut-input-bg: #ffffff;
+  --ut-border: #dde3e8;
+  --ut-fg: #1d2733;
+  --ut-muted: #5b6876;
+  --ut-heading: #0f1720;
+  --ut-accent: #0a77a0;
+  --ut-accent-fg: #ffffff;
+  --ut-accent-2: #cc3e20;
+  --ut-accent-2-fg: #ffffff;
+  --ut-star: #b7791f;
+  --ut-success: #1f8a4c;
+  --ut-header-bg: #ffffff;
+  --ut-header-fg: #0f1720;
+  --ut-header-grad: none;
+  --ut-glow: transparent;
+  --ut-banner: linear-gradient(110deg, #0a77a0 0%, #075673 100%);
+  --ut-banner-fg: #ffffff;
+  --ut-c1: #0a77a0;
+  --ut-c2: #cc3e20;
+  --ut-c3: #7b4fd6;
+  --ut-c4: #1f8a4c;
+  --ut-c5: #c27a00;
+  --ut-icon-filter: none;
+  --ut-logo-filter: none;
+  --ut-shadow-k: 1;
+}
