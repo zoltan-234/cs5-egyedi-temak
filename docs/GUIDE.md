@@ -1,7 +1,7 @@
 # CS5 Themes – installation guide
 
 Custom themes for CooSpace 5  
-Version 0.7.0 · Magyar verzió: UTMUTATO.md
+Version 0.7.1 · Magyar verzió: UTMUTATO.md
 
 ## Contents
 
@@ -22,7 +22,7 @@ Version 0.7.0 · Magyar verzió: UTMUTATO.md
 
 ## 1. What is this?
 
-**CS5 Themes** is a small browser extension for the **CooSpace 5 (CS5)** site. It lets you choose how the site looks: 19 colour themes (light, colourful, pink, dark) and 6 styles (Classic, Modern, Glass, Islands, Brutalist, Top menu), freely combined.
+**CS5 Themes** is a small browser extension for the **CooSpace 5 (CS5)** site. It lets you choose how the site looks: 19 colour themes (light, colourful, pink, dark) and 5 styles (Classic, Modern, Glass, Islands, Brutalist), freely combined.
 
 - Your choice **is kept** after a refresh (F5) and after restarting the browser.
 - Switch with one click: click the extension icon and the picker opens.
@@ -65,7 +65,7 @@ Every release is on the GitHub **Releases** page: `https://github.com/zoltan-234
    ![The GitHub Releases page: the two downloadable files](screenshots/GH-01.png)
    *The GitHub Releases page: the two downloadable files*
    
-2. **For Firefox** download the file ending in `.xpi` (e.g. `cs5-temak-0.7.0.xpi`).
+2. **For Firefox** download the file ending in `.xpi` (e.g. `cs5-temak-0.7.1.xpi`).
 3. **For Chrome, Edge and Brave** download the `…-chromium.zip` file.
 
    ![The downloaded files: the .xpi and the -chromium.zip](screenshots/GH-02.png)
@@ -217,7 +217,7 @@ Every release is on the GitHub **Releases** page: `https://github.com/zoltan-234
 
 1. Open the CooSpace site and click the extension icon.
 2. **Colours:** pick a theme (Light, Colourful, Pink, Dark). The small preview shows the colours.
-3. **Style:** scroll down and pick a shape: Classic (the original), Modern, Glass, Islands, Brutalist or Top menu.
+3. **Style:** scroll down and pick a shape: Classic (the original), Modern, Glass, Islands or Brutalist.
 4. The two combine freely, the change is instant, and it survives closing the browser.
 5. **Features:** at the bottom of the popup there are three switches (open the Scenes page on start; default mode of the groups; remember groups). Each has an **ⓘ** mark that explains what it does. All are off by default.
 

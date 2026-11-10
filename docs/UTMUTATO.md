@@ -1,7 +1,7 @@
 # CS5 Témák – telepítési útmutató
 
 Egyedi témák a CooSpace 5 felületéhez  
-Verzió 0.7.0 · English version: GUIDE.md
+Verzió 0.7.1 · English version: GUIDE.md
 
 ## Tartalom
 
@@ -22,7 +22,7 @@ Verzió 0.7.0 · English version: GUIDE.md
 
 ## 1. Mi ez, és mire jó?
 
-A **CS5 Témák** egy kis böngészőbővítmény a **CooSpace 5 (CS5)** felületéhez. Segítségével kiválaszthatod, hogyan nézzen ki az oldal: 19 színtéma (világos, színes, rózsaszín, sötét) és 6 stílus (Klasszikus, Modern, Üveg, Szigetek, Brutalista, Felső menü) közül, és tetszőlegesen kombinálhatod őket.
+A **CS5 Témák** egy kis böngészőbővítmény a **CooSpace 5 (CS5)** felületéhez. Segítségével kiválaszthatod, hogyan nézzen ki az oldal: 19 színtéma (világos, színes, rózsaszín, sötét) és 5 stílus (Klasszikus, Modern, Üveg, Szigetek, Brutalista) közül, és tetszőlegesen kombinálhatod őket.
 
 - A választásod **megmarad** frissítés (F5) és a böngésző újraindítása után is.
 - Egy kattintással váltasz: a bővítmény ikonjára kattintva megnyílik a választó ablak.
@@ -65,7 +65,7 @@ Minden kiadás a GitHub **Releases** oldalán található: `https://github.com/z
    ![A GitHub Releases oldal: itt tölthető le a két fájl](screenshots/GH-01.png)
    *A GitHub Releases oldal: itt tölthető le a két fájl*
    
-2. **Firefox-hoz** az `.xpi` végű fájlt töltsd le (pl. `cs5-temak-0.7.0.xpi`).
+2. **Firefox-hoz** az `.xpi` végű fájlt töltsd le (pl. `cs5-temak-0.7.1.xpi`).
 3. **Chrome-hoz, Edge-hez és Brave-hez** a `…-chromium.zip` fájlt töltsd le.
 
    ![A letöltött fájlok: az .xpi és a -chromium.zip](screenshots/GH-02.png)
@@ -217,7 +217,7 @@ Minden kiadás a GitHub **Releases** oldalán található: `https://github.com/z
 
 1. Nyisd meg a CooSpace oldalt, és kattints a bővítmény ikonjára.
 2. **Színek:** válassz a témák közül (Világos, Többszínű, Rózsaszín, Sötét). A kis előnézet mutatja a színeket.
-3. **Stílus:** legörgetve válassz formát: Klasszikus (az eredeti), Modern, Üveg, Szigetek, Brutalista vagy Felső menü.
+3. **Stílus:** legörgetve válassz formát: Klasszikus (az eredeti), Modern, Üveg, Szigetek vagy Brutalista.
 4. A kettő szabadon kombinálható, a változás azonnal látszik, és a böngésző bezárása után is megmarad.
 5. **Funkciók:** a popup alján három kapcsoló van (induláskor a Színterek oldalra; csoportok alapmódja; emlékezés a csoportokra). Mindegyik mellett egy **ⓘ** jel magyarázza, mit csinál. Alapból mind ki van kapcsolva.
 

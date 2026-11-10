@@ -40,7 +40,7 @@ BANNER_HTML = f"""<style>{BANNER}</style>
 <div class="card c2"><div class="bar" style="width:130px;background:#c2255c"></div><div class="dot" style="background:#7048e8"></div></div>
 <div class="card c3"><div class="bar" style="width:140px;background:#0f766e;border:2px solid #111;height:16px"></div><div class="dot" style="background:#ff6b35;border:2px solid #111"></div></div>
 <h1>CS5 Témák</h1><div class="s">Egyedi témák és stílusok a CooSpace 5 felületéhez</div>
-<div class="pills"><span>19 színtéma</span><span>6 stílus</span><span>Firefox · Chrome · Edge · Brave</span></div>"""
+<div class="pills"><span>19 színtéma</span><span>5 stílus</span><span>Firefox · Chrome · Edge · Brave</span></div>"""
 
 def gallery_html(themes):
     cards = ""
@@ -78,7 +78,7 @@ def main():
             pg.screenshot(path=str(OUT / f"{name}.png"), full_page=(name != "banner")); pg.close()
         tmp.unlink()
         page_tpl = (ROOT / "tools" / "mock" / "page.html").read_text(encoding="utf-8")
-        for layout, theme in [("modern", "light"), ("glass", "aurora"), ("floating", "sakura"), ("brutal", "rosegarden"), ("topnav", "sakura-virag")]:
+        for layout, theme in [("modern", "light"), ("glass", "aurora"), ("floating", "sakura"), ("brutal", "rosegarden")]:
             f = ROOT / "tools" / "mock" / f"_{layout}.html"
             f.write_text(page_tpl.replace("THEME", theme).replace("LAYOUT", layout), encoding="utf-8")
             pg = b.new_page(viewport={"width": 1180, "height": 700}); pg.goto(f.as_uri()); pg.wait_for_timeout(1300)

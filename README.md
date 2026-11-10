@@ -3,7 +3,7 @@
 ![CS5 Témák](assets/banner.png)
 
 **Válaszd ki, hogyan nézzen ki a CooSpace 5 (CS5)!**
-19 színtéma · 6 stílus · egy kattintás
+19 színtéma · 5 stílus · egy kattintás
 
 [![Licenc: PolyForm Noncommercial](https://img.shields.io/badge/licenc-PolyForm%20Noncommercial-orange)](LICENSE)
 [![Legújabb kiadás](https://img.shields.io/github/v/release/zoltan-234/cs5-egyedi-temak?label=kiad%C3%A1s)](https://github.com/zoltan-234/cs5-egyedi-temak/releases/latest)
@@ -29,9 +29,6 @@ A színtémától független forma-réteg. Bármelyik színnel kombinálható.
 |:--:|:--:|
 | ![Modern](assets/preview-modern.png) **Modern**<br>Tiszta, lekerekített, finom árnyékok | ![Üveg](assets/preview-glass.png) **Üveg**<br>Áttetsző, elmosott panelek |
 | ![Szigetek](assets/preview-floating.png) **Szigetek**<br>Lebegő, pirula-alakú elemek, rugalmas mozgás | ![Brutalista](assets/preview-brutal.png) **Brutalista**<br>Vastag keret, kemény árnyék |
-| ![Felső menü](assets/preview-topnav.png) **Felső menü**<br>A menü fent, a profil jobbra, a fülek oldalt | |
-
-A **Felső menü** stílus átrendezi a felületet: a menü vízszintes sávként felkerül az oldal tetejére, a profil jobbra kerül, a Színterek fülei pedig bal oldali sávot kapnak.
 
 A **Klasszikus** stílus a CooSpace eredeti formáit tartja meg, csak a színeket cseréli.
 

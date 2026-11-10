@@ -3,7 +3,7 @@
 ![CS5 Themes](assets/banner.png)
 
 **Choose how CooSpace 5 (CS5) looks!**
-19 colour themes · 6 styles · one click
+19 colour themes · 5 styles · one click
 
 [![Licence: PolyForm Noncommercial](https://img.shields.io/badge/licence-PolyForm%20Noncommercial-orange)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/zoltan-234/cs5-egyedi-temak?label=release)](https://github.com/zoltan-234/cs5-egyedi-temak/releases/latest)
@@ -29,9 +29,6 @@ A shape layer independent of the colour theme; combine it with any colour.
 |:--:|:--:|
 | ![Modern](assets/preview-modern.png) **Modern**<br>Clean, rounded, soft shadows | ![Glass](assets/preview-glass.png) **Glass**<br>Translucent, blurred panels |
 | ![Islands](assets/preview-floating.png) **Islands**<br>Floating, pill-shaped elements, springy motion | ![Brutalist](assets/preview-brutal.png) **Brutalist**<br>Thick borders, hard shadows |
-| ![Top menu](assets/preview-topnav.png) **Top menu**<br>Menu on top, profile on the right, tabs on the side | |
-
-The **Top menu** style rearranges the interface: the menu becomes a horizontal bar at the top, the profile moves to the right, and the tabs of the Scenes page get a vertical bar on the left.
 
 **Classic** keeps CooSpace's original shapes and only changes the colours.
 

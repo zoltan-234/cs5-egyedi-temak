@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = (ROOT / "layouts" / "modern.css").read_text(encoding="utf-8")
-VARIANTS = ["glass", "floating", "brutal", "topnav"]
+VARIANTS = ["glass", "floating", "brutal"]
 
 for vid in VARIANTS:
     over = (ROOT / "layouts" / "src" / f"{vid}.css").read_text(encoding="utf-8")

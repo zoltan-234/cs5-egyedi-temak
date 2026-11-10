@@ -264,6 +264,3 @@ footer a { color: var(--active); }
   text-decoration: underline;
 }
 .link.done { color: var(--muted); text-decoration: none; cursor: default; }
-.layout-topnav { border-radius: 6px; flex-direction: column; }
-.layout-topnav span { border-radius: 2px; opacity: 0.5; }
-.layout-topnav span:first-child { flex: 0 0 22%; background: var(--active); opacity: 0.8; }

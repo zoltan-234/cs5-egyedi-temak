@@ -1,53 +1,44 @@
 [
- {
-  "id": "classic",
-  "name": "Klasszikus",
-  "desc": "A CooSpace eredeti formái",
-  "css": []
- },
- {
-  "id": "modern",
-  "name": "Modern",
-  "desc": "Lekerekítés, finom árnyékok, animációk",
-  "css": [
-   "layouts/modern.css",
-   "themes/login.css"
-  ]
- },
- {
-  "id": "glass",
-  "name": "Üveg",
-  "desc": "Áttetsző, elmosott panelek, színes háttér",
-  "css": [
-   "layouts/glass.css",
-   "themes/login.css"
-  ]
- },
- {
-  "id": "floating",
-  "name": "Szigetek",
-  "desc": "Lebegő, pirula-alakú elemek, rugalmas mozgás",
-  "css": [
-   "layouts/floating.css",
-   "themes/login.css"
-  ]
- },
- {
-  "id": "brutal",
-  "name": "Brutalista",
-  "desc": "Vastag keret, kemény árnyék, éles sarkok",
-  "css": [
-   "layouts/brutal.css",
-   "themes/login.css"
-  ]
- },
- {
-  "id": "topnav",
-  "name": "Felső menü",
-  "desc": "A menü fent, a profil jobbra, a fülek oldalt",
-  "css": [
-   "layouts/topnav.css",
-   "themes/login.css"
-  ]
- }
+  {
+    "id": "classic",
+    "name": "Klasszikus",
+    "desc": "A CooSpace eredeti formái",
+    "css": []
+  },
+  {
+    "id": "modern",
+    "name": "Modern",
+    "desc": "Lekerekítés, finom árnyékok, animációk",
+    "css": [
+      "layouts/modern.css",
+      "themes/login.css"
+    ]
+  },
+  {
+    "id": "glass",
+    "name": "Üveg",
+    "desc": "Áttetsző, elmosott panelek, színes háttér",
+    "css": [
+      "layouts/glass.css",
+      "themes/login.css"
+    ]
+  },
+  {
+    "id": "floating",
+    "name": "Szigetek",
+    "desc": "Lebegő, pirula-alakú elemek, rugalmas mozgás",
+    "css": [
+      "layouts/floating.css",
+      "themes/login.css"
+    ]
+  },
+  {
+    "id": "brutal",
+    "name": "Brutalista",
+    "desc": "Vastag keret, kemény árnyék, éles sarkok",
+    "css": [
+      "layouts/brutal.css",
+      "themes/login.css"
+    ]
+  }
 ]

@@ -32,7 +32,7 @@ def browser(code, name, addr, devmode_hu, devmode_en):
 
 CHAPTERS_HU = [
  ("h1", "mi", "1. Mi ez, és mire jó?"),
- ("p", "A <b>CS5 Témák</b> egy kis böngészőbővítmény a <b>CooSpace 5 (CS5)</b> felületéhez. Segítségével kiválaszthatod, hogyan nézzen ki az oldal: 19 színtéma (világos, színes, rózsaszín, sötét) és 6 stílus (Klasszikus, Modern, Üveg, Szigetek, Brutalista, Felső menü) közül, és tetszőlegesen kombinálhatod őket."),
+ ("p", "A <b>CS5 Témák</b> egy kis böngészőbővítmény a <b>CooSpace 5 (CS5)</b> felületéhez. Segítségével kiválaszthatod, hogyan nézzen ki az oldal: 19 színtéma (világos, színes, rózsaszín, sötét) és 5 stílus (Klasszikus, Modern, Üveg, Szigetek, Brutalista) közül, és tetszőlegesen kombinálhatod őket."),
  ("list", ["A választásod <b>megmarad</b> frissítés (F5) és a böngésző újraindítása után is.", "Egy kattintással váltasz: a bővítmény ikonjára kattintva megnyílik a választó ablak.", "Ingyenes, és bármikor kikapcsolható vagy eltávolítható."]),
  ("note", "ok", "Nem kell aggódnod: ez csak a kinézetet változtatja", "A bővítmény <b>kizárólag az oldal megjelenését</b> módosítja (színek, formák, animációk). Biztonságos, mert:"),
  ("list", [
@@ -57,7 +57,7 @@ CHAPTERS_HU = [
  ("p", "Minden kiadás a GitHub <b>Releases</b> oldalán található: <code>%s</code>" % REL),
  ("steps", [
    ("Nyisd meg a fenti oldalt. Az <b>Assets</b> (Fájlok) listában két fájlt látsz.", ["GH-01"]),
-   ("<b>Firefox-hoz</b> az <code>.xpi</code> végű fájlt töltsd le (pl. <code>cs5-temak-0.7.0.xpi</code>).", []),
+   ("<b>Firefox-hoz</b> az <code>.xpi</code> végű fájlt töltsd le (pl. <code>cs5-temak-0.7.1.xpi</code>).", []),
    ("<b>Chrome-hoz, Edge-hez és Brave-hez</b> a <code>…-chromium.zip</code> fájlt töltsd le.", ["GH-02"])]),
 
  ("h1", "firefox", "4. Telepítés Firefoxban"),
@@ -110,7 +110,7 @@ CHAPTERS_HU = [
  ("steps", [
    ("Nyisd meg a CooSpace oldalt, és kattints a bővítmény ikonjára.", []),
    ("<b>Színek:</b> válassz a témák közül (Világos, Többszínű, Rózsaszín, Sötét). A kis előnézet mutatja a színeket.", []),
-   ("<b>Stílus:</b> legörgetve válassz formát: Klasszikus (az eredeti), Modern, Üveg, Szigetek, Brutalista vagy Felső menü.", []),
+   ("<b>Stílus:</b> legörgetve válassz formát: Klasszikus (az eredeti), Modern, Üveg, Szigetek vagy Brutalista.", []),
    ("A kettő szabadon kombinálható, a változás azonnal látszik, és a böngésző bezárása után is megmarad.", []),
    ("<b>Funkciók:</b> a popup alján három kapcsoló van (induláskor a Színterek oldalra; csoportok alapmódja; emlékezés a csoportokra). Mindegyik mellett egy <b>ⓘ</b> jel magyarázza, mit csinál. Alapból mind ki van kapcsolva.", [])]),
  ("note", "info", "Vissza az eredetihez", "Válaszd a <b>Világos → Eredeti</b> színt és a <b>Klasszikus</b> stílust: az oldal pontosan úgy néz ki, mint a bővítmény nélkül."),
@@ -161,7 +161,7 @@ CHAPTERS_HU = [
 
 CHAPTERS_EN = [
  ("h1", "mi", "1. What is this?"),
- ("p", "<b>CS5 Themes</b> is a small browser extension for the <b>CooSpace 5 (CS5)</b> site. It lets you choose how the site looks: 19 colour themes (light, colourful, pink, dark) and 6 styles (Classic, Modern, Glass, Islands, Brutalist, Top menu), freely combined."),
+ ("p", "<b>CS5 Themes</b> is a small browser extension for the <b>CooSpace 5 (CS5)</b> site. It lets you choose how the site looks: 19 colour themes (light, colourful, pink, dark) and 5 styles (Classic, Modern, Glass, Islands, Brutalist), freely combined."),
  ("list", ["Your choice <b>is kept</b> after a refresh (F5) and after restarting the browser.", "Switch with one click: click the extension icon and the picker opens.", "Free, and can be turned off or removed at any time."]),
  ("note", "ok", "Nothing to worry about: it only changes the looks", "The extension changes <b>only how the page looks</b> (colours, shapes, animations). It is safe because:"),
  ("list", [
@@ -186,7 +186,7 @@ CHAPTERS_EN = [
  ("p", "Every release is on the GitHub <b>Releases</b> page: <code>%s</code>" % REL),
  ("steps", [
    ("Open the page above. In the <b>Assets</b> list you will see two files.", ["GH-01"]),
-   ("<b>For Firefox</b> download the file ending in <code>.xpi</code> (e.g. <code>cs5-temak-0.7.0.xpi</code>).", []),
+   ("<b>For Firefox</b> download the file ending in <code>.xpi</code> (e.g. <code>cs5-temak-0.7.1.xpi</code>).", []),
    ("<b>For Chrome, Edge and Brave</b> download the <code>…-chromium.zip</code> file.", ["GH-02"])]),
 
  ("h1", "firefox", "4. Installing in Firefox"),
@@ -239,7 +239,7 @@ CHAPTERS_EN = [
  ("steps", [
    ("Open the CooSpace site and click the extension icon.", []),
    ("<b>Colours:</b> pick a theme (Light, Colourful, Pink, Dark). The small preview shows the colours.", []),
-   ("<b>Style:</b> scroll down and pick a shape: Classic (the original), Modern, Glass, Islands, Brutalist or Top menu.", []),
+   ("<b>Style:</b> scroll down and pick a shape: Classic (the original), Modern, Glass, Islands or Brutalist.", []),
    ("The two combine freely, the change is instant, and it survives closing the browser.", []),
    ("<b>Features:</b> at the bottom of the popup there are three switches (open the Scenes page on start; default mode of the groups; remember groups). Each has an <b>ⓘ</b> mark that explains what it does. All are off by default.", [])]),
  ("note", "info", "Back to the original", "Choose <b>Light → Eredeti</b> as the colour and <b>Klasszikus</b> as the style: the page looks exactly as it does without the extension."),
