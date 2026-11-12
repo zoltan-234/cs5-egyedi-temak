@@ -134,6 +134,20 @@ THEMES = [
     border="#26262b", fg="#e6e6e9", muted="#9d9da6", heading="#ffffff",
     accent="#a78bfa", accentfg="#0b0b0d", accent2="#fb7185", accent2fg="#000000", star="#fcd34d", success="#34d399",
     pal=["#60a5fa", "#fb7185", "#a78bfa", "#34d399", "#fcd34d"])),
+
+  # ---------- Special editions ----------
+  # Illusztrált szegedi panoráma a fejlécben (themes/szeged-sunset.jpg), lila–rózsaszín–narancs naplemente.
+  ("szeged-sunset", "SzegedVI", True, "Special editions", dict(
+    bg="#150d26", sidebar="#120b21", sidebarfg="#ece6f7", sidebarmuted="#b3a7cc",
+    surface="#1f1636", surface2="#2a1e47", rowalt="#1b1230", input="#120b21",
+    border="#33264f", fg="#ece6f7", muted="#b3a7cc", heading="#ffffff",
+    accent="#ff6fae", accentfg="#1a0d24", accent2="#ffa057", accent2fg="#1a0d24", star="#ffd166", success="#5fd39a",
+    headerbg="#150d26", headerfg="#ffffff",
+    # Fátyol a panoráma fölött: felül enyhe, alul sötétlila, hogy a fehér cím olvasható maradjon.
+    headergrad="linear-gradient(180deg, rgba(21, 13, 38, 0.30) 0%, rgba(21, 13, 38, 0.05) 40%, rgba(21, 13, 38, 0.80) 100%)",
+    previewheader="linear-gradient(110deg, #ff7e5f 0%, #ff6fae 45%, #7e22ce 100%)",
+    headerimg="cover", special=True,
+    pal=["#ff6fae", "#ffa057", "#ffd166", "#4fd1ff", "#a98bff"], glow="rgba(255, 111, 174, 0.28)")),
 ]
 
 def lum(h):
@@ -217,11 +231,26 @@ for tid, name, dark, group, raw in THEMES:
         # A kép url()-je ebben a fájlban áll (nem változóban), mert a változó url()-ját
         # a felhasználó stíluslapjához képest oldaná fel a böngésző, és a layouts/ mappából nem találná.
         sel = f'html[data-unics-theme="{tid}"][data-unics-theme="{tid}"][data-unics-theme="{tid}"] #header'
-        css += (f'{sel} {{\n'
-                f'  background-image: {p["headergrad"]}, url("{tid}.jpg") !important;\n'
-                f'  background-size: auto, 720px auto !important;\n'
-                f'  background-position: 0 0, center top !important;\n'
-                f'  background-repeat: no-repeat, repeat !important;\n}}\n')
+        if p["headerimg"] == "cover":
+            # Széles panoráma: kitölti a fejlécet, a fontos rész középen van; lassan „úszik”.
+            css += (f'{sel} {{\n'
+                    f'  background-image: {p["headergrad"]}, url("{tid}.jpg") !important;\n'
+                    f'  background-size: auto, cover !important;\n'
+                    f'  background-position: 0 0, 50% 58% !important;\n'
+                    f'  background-repeat: no-repeat, no-repeat !important;\n'
+                    f'  animation: ut-pan-{tid} 60s ease-in-out infinite alternate;\n}}\n'
+                    f'@keyframes ut-pan-{tid} {{\n'
+                    f'  from {{ background-position: 0 0, 0% 58%; }}\n'
+                    f'  to {{ background-position: 0 0, 100% 58%; }}\n}}\n'
+                    f'@media (prefers-reduced-motion: reduce) {{\n  {sel} {{ animation: none; }}\n}}\n'
+                    f'{sel} :is(h1, h1 *, .scrollOutRow, .scrollOutRow *) {{\n'
+                    f'  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);\n}}\n')
+        else:
+            css += (f'{sel} {{\n'
+                    f'  background-image: {p["headergrad"]}, url("{tid}.jpg") !important;\n'
+                    f'  background-size: auto, 720px auto !important;\n'
+                    f'  background-position: 0 0, center top !important;\n'
+                    f'  background-repeat: no-repeat, repeat !important;\n}}\n')
     open(f"themes/{tid}.css", "w").write(f"/* {name} – generálva: tools/build-themes.py */\n" + css)
 
     e = {"id": tid, "name": name, "group": group, "css": ["themes/base.css", f"themes/{tid}.css", "themes/login.css"],
@@ -230,6 +259,10 @@ for tid, name, dark, group, raw in THEMES:
         e["previewHeader"] = p.get("previewheader", p["headergrad"])
     if dark:
         e["dark"] = True
+    if p.get("special"):
+        e["special"] = True
+    if p.get("headerimg") == "cover":
+        e["previewImage"] = f"themes/{tid}.jpg"
     entries.append(e)
 
 with open("themes.json", "w") as f:

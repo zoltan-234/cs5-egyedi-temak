@@ -6,9 +6,13 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <header>
-    <h1>CS5 Témák</h1>
-    <p class="sub">A választás csak ebben a böngészőben tárolódik.</p>
+  <header class="top">
+    <img class="logo" src="../icons/icon-48.png" width="40" height="40" alt="">
+    <div class="titles">
+      <h1>CS5 Témák</h1>
+      <p class="sub">A választás csak ebben a böngészőben tárolódik.</p>
+    </div>
+    <span class="ver" id="ver"></span>
   </header>
 
   <div id="perm" class="perm" hidden>
@@ -16,51 +20,64 @@
     <button id="perm-btn" type="button">Engedélyezés</button>
   </div>
 
-  <h2 class="group">Színek</h2>
-  <ul id="themes" class="options" role="radiogroup" aria-label="Színtéma"></ul>
+  <section class="sec sec-special" id="special-sec" hidden>
+    <h2 class="group group-special"><span class="spark" aria-hidden="true"></span>Special editions</h2>
+    <ul id="special" class="options special" role="radiogroup" aria-label="Special editions"></ul>
+  </section>
 
-  <h2 class="group">Stílus</h2>
-  <ul id="layouts" class="options" role="radiogroup" aria-label="Stílus"></ul>
+  <section class="sec">
+    <h2 class="group">Színek</h2>
+    <ul id="themes" class="options" role="radiogroup" aria-label="Színtéma"></ul>
+  </section>
 
-  <h2 class="group">Funkciók</h2>
-  <div class="features" id="features">
+  <section class="sec">
+    <h2 class="group">Stílus</h2>
+    <ul id="layouts" class="options" role="radiogroup" aria-label="Stílus"></ul>
+  </section>
 
-    <div class="feat">
-      <label class="row">
-        <input type="checkbox" id="f-start">
-        <span>Induláskor a Színterek oldalra</span>
-      </label>
-      <button type="button" class="info" aria-label="Mit csinál ez?" data-tip="f-start-tip">i</button>
-      <p class="tip" id="f-start-tip" hidden>Bejelentkezés után (vagy a CooSpace megnyitásakor) rögtön a Színterek oldalra visz, bármelyik oldalon is landolnál (pl. Áttekintés, Profil). Csak egyszer ugrik böngészőfülenként, utána bárhová el lehet menni.</p>
-    </div>
+  <section class="sec">
+    <h2 class="group">Funkciók</h2>
+    <div class="features" id="features">
 
-    <div class="feat">
-      <div class="row">
-        <label for="f-mode">Csoportok a Színtereken</label>
-        <select id="f-mode">
-          <option value="original">Eredeti</option>
-          <option value="closed">Mind csukva</option>
-          <option value="open">Mind nyitva</option>
-          <option value="current">Csak az aktuális félév nyitva</option>
-        </select>
+      <div class="feat">
+        <label class="row">
+          <input type="checkbox" class="switch" id="f-start">
+          <span>Induláskor a Színterek oldalra</span>
+        </label>
+        <button type="button" class="info" aria-label="Mit csinál ez?" data-tip="f-start-tip">i</button>
+        <p class="tip" id="f-start-tip" hidden>Bejelentkezés után (vagy a CooSpace megnyitásakor) rögtön a Színterek oldalra visz, bármelyik oldalon is landolnál (pl. Áttekintés, Profil). Csak egyszer ugrik böngészőfülenként, utána bárhová el lehet menni.</p>
       </div>
-      <button type="button" class="info" aria-label="Mit csinál ez?" data-tip="f-mode-tip">i</button>
-      <p class="tip" id="f-mode-tip" hidden>Megadja, hogy a Színterek oldalon a csoportok (Állandó, 2026/27/1 …) nyitva vagy csukva legyenek betöltéskor. „Aktuális félév”: a legfelső, félévnek látszó csoport (pl. 2026/27/1) marad nyitva, az Állandó és a régi félévek csukva.</p>
-    </div>
 
-    <div class="feat">
-      <label class="row">
-        <input type="checkbox" id="f-remember">
-        <span>Emlékezz a csoportokra</span>
-      </label>
-      <button type="button" class="info" aria-label="Mit csinál ez?" data-tip="f-remember-tip">i</button>
-      <p class="tip" id="f-remember-tip" hidden>Amit te kinyitsz vagy becsukol (pl. csak az „Állandó”-t csukod be), azt név szerint megjegyzi, és legközelebb így tölti be. Ez erősebb az alapmódnál: az új csoportokra az alapmód vonatkozik, a megjegyzettekre a te választásod.</p>
-      <button type="button" class="link" id="f-forget">Megjegyzett csoportok törlése</button>
+      <div class="feat">
+        <div class="row">
+          <label for="f-mode">Csoportok a Színtereken</label>
+          <select id="f-mode">
+            <option value="original">Eredeti</option>
+            <option value="closed">Mind csukva</option>
+            <option value="open">Mind nyitva</option>
+            <option value="current">Csak az aktuális félév nyitva</option>
+          </select>
+        </div>
+        <button type="button" class="info" aria-label="Mit csinál ez?" data-tip="f-mode-tip">i</button>
+        <p class="tip" id="f-mode-tip" hidden>Megadja, hogy a Színterek oldalon a csoportok (Állandó, 2026/27/1 …) nyitva vagy csukva legyenek betöltéskor. „Aktuális félév”: a legfelső, félévnek látszó csoport (pl. 2026/27/1) marad nyitva, az Állandó és a régi félévek csukva.</p>
+      </div>
+
+      <div class="feat">
+        <label class="row">
+          <input type="checkbox" class="switch" id="f-remember">
+          <span>Emlékezz a csoportokra</span>
+        </label>
+        <button type="button" class="info" aria-label="Mit csinál ez?" data-tip="f-remember-tip">i</button>
+        <p class="tip" id="f-remember-tip" hidden>Amit te kinyitsz vagy becsukol (pl. csak az „Állandó”-t csukod be), azt név szerint megjegyzi, és legközelebb így tölti be. Ez erősebb az alapmódnál: az új csoportokra az alapmód vonatkozik, a megjegyzettekre a te választásod.</p>
+        <button type="button" class="link" id="f-forget">Megjegyzett csoportok törlése</button>
+      </div>
     </div>
-  </div>
+  </section>
 
   <footer>
-    <a href="https://unics.szte.hu/Home" target="_blank" rel="noopener">CooSpace megnyitása</a>
+    <a class="open" href="https://unics.szte.hu/Home" target="_blank" rel="noopener">CooSpace megnyitása
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+    </a>
   </footer>
 
   <script src="popup.js"></script>

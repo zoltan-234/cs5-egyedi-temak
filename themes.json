@@ -17,5 +17,6 @@
   {"id": "dracula", "name": "Dracula", "group": "Sötét", "css": ["themes/base.css", "themes/dracula.css", "themes/login.css"], "preview": ["#282a36", "#2f3142", "#8be9fd", "#ff79c6", "#21222c"], "dark": true},
   {"id": "gruvbox", "name": "Gruvbox", "group": "Sötét", "css": ["themes/base.css", "themes/gruvbox.css", "themes/login.css"], "preview": ["#282828", "#32302f", "#83a598", "#fe8019", "#1d2021"], "dark": true},
   {"id": "rosepine", "name": "Rosé Pine", "group": "Sötét", "css": ["themes/base.css", "themes/rosepine.css", "themes/login.css"], "preview": ["#191724", "#1f1d2e", "#9ccfd8", "#ebbcba", "#16141f"], "dark": true},
-  {"id": "amoled", "name": "AMOLED fekete", "group": "Sötét", "css": ["themes/base.css", "themes/amoled.css", "themes/login.css"], "preview": ["#000000", "#0b0b0d", "#60a5fa", "#fb7185", "#000000"], "dark": true}
+  {"id": "amoled", "name": "AMOLED fekete", "group": "Sötét", "css": ["themes/base.css", "themes/amoled.css", "themes/login.css"], "preview": ["#000000", "#0b0b0d", "#60a5fa", "#fb7185", "#000000"], "dark": true},
+  {"id": "szeged-sunset", "name": "SzegedVI", "group": "Special editions", "css": ["themes/base.css", "themes/szeged-sunset.css", "themes/login.css"], "preview": ["#150d26", "#1f1636", "#ff6fae", "#ffa057", "#120b21"], "previewHeader": "linear-gradient(110deg, #ff7e5f 0%, #ff6fae 45%, #7e22ce 100%)", "dark": true, "special": true, "previewImage": "themes/szeged-sunset.jpg"}
 ]

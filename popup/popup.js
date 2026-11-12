@@ -19,7 +19,8 @@ async function select(group, item) {
 }
 
 function markActive(listId, id) {
-  document.querySelectorAll(`#${listId} .option`).forEach((el) => {
+  const sel = listId === "themes" ? "#themes .option, #special .option" : `#${listId} .option`;
+  document.querySelectorAll(sel).forEach((el) => {
     el.setAttribute("aria-checked", String(el.dataset.id === id));
   });
 }
@@ -28,6 +29,7 @@ function buildVisual(item) {
   const wrap = document.createElement("span");
   if (item.preview) {
     wrap.append(buildMiniPreview(item.preview, item.previewHeader));
+    if (item.previewImage) addPreviewImage(wrap.firstChild, item.previewImage);
     wrap.className = "mini-wrap";
   } else {
     wrap.className = `layout-icon layout-${item.id}`;
@@ -91,6 +93,7 @@ function renderGroup(group, items, currentId) {
   const list = document.getElementById(group.listId);
   let lastGroup = null;
   for (const item of items) {
+    if (item.special) { renderSpecial(group, item); continue; }
     if (item.group && item.group !== lastGroup) {
       list.appendChild(buildSubheading(item.group));
       lastGroup = item.group;
@@ -125,6 +128,51 @@ function renderGroup(group, items, currentId) {
     list.appendChild(li);
   }
   markActive(group.listId, currentId);
+}
+
+// Special editions: külön szakasz a popup tetején, széles kártyával
+function renderSpecial(group, item) {
+  const list = document.getElementById("special");
+  document.getElementById("special-sec").hidden = false;
+  const li = document.createElement("li");
+  const btn = document.createElement("button");
+  btn.className = "option";
+  btn.type = "button";
+  btn.role = "radio";
+  btn.dataset.id = item.id;
+
+  const text = document.createElement("span");
+  text.className = "text";
+  const name = document.createElement("span");
+  name.className = "name";
+  name.textContent = item.name;
+  const desc = document.createElement("span");
+  desc.className = "desc";
+  desc.textContent = item.desc ?? "Illusztrált panoráma a fejlécben";
+  text.append(name, desc);
+
+  const check = document.createElement("span");
+  check.className = "check";
+  check.textContent = "✓";
+
+  btn.append(buildVisual(item), text, check);
+  btn.addEventListener("click", () => select(group, item));
+  li.appendChild(btn);
+  list.appendChild(li);
+}
+
+// A téma fejlécképe a mini előnézet tetején (ráhúzva lassan végigúszik)
+function addPreviewImage(mini, path) {
+  const img = document.createElement("span");
+  img.className = "mini-img";
+  img.style.backgroundImage = `url("${api.runtime.getURL(path)}")`;
+  mini.prepend(img);
+}
+
+// Verziószám a fejlécben
+function showVersion() {
+  const v = api.runtime.getManifest?.().version;
+  if (v) document.getElementById("ver").textContent = `v${v}`;
 }
 
 // Firefox MV3-ban a host-engedély alapból nincs megadva, kérni kell.
@@ -175,6 +223,7 @@ async function setupFeatures() {
 }
 
 (async () => {
+  showVersion();
   await setupFeatures();
   const stored = await api.storage.local.get(GROUPS.map((g) => g.key));
   for (const group of GROUPS) {
